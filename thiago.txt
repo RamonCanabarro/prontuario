@@ -1,0 +1,6 @@
+cd entra na pasta
+cd .. sai da pasta
+$nbsp/ vai pra pasta raiz
+
+instalar o git
+entrar na pasta do projeto pelo cmd
