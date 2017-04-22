@@ -4,3 +4,7 @@ $nbsp/ vai pra pasta raiz
 
 instalar o git
 entrar na pasta do projeto pelo cmd
+
+
+
+RamonCanabarro
