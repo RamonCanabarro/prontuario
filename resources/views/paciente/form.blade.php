@@ -48,7 +48,7 @@
 {{--</table>--}}
 {{--</div>--}}
 {{--@endsection--}}
-
+x
 @section('conteudo')
     <div class="row">
         <div class="col-md-11 panel panel-primary">
@@ -56,24 +56,66 @@
                 <h4>Cadastro de pacientes</h4>
             </div>
             <div class="panel-body">
-                <form action="list.php" method="post">
-                    <div>
-                        <label for="nome">Nome:</label>
-                        <input type="text" class="form-control" id="nome" name="nome" required placeholder="João da Silva"
+                    <div class="row">
+                <label for="nome" class="col-sm-2">Nome:</label>
+                        <input type="text" class="col-sm-4" id="nome" name="nome" placeholder="Ramon"
                                style="text-transform: uppercase"/>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="col-md-6">
-                            <label for="endereco">Endereço</label>
-                            <input type="text" id="endereco" name="endereco" class="form-control"/>
+                        <label for="sobrenome" class="col-sm-2">Sobrenome:</label>
+                        <input type="text" class="col-sm-4" id="sobrenome" name="sobrenome" placeholder="Canabarro"
+                               style="text-transform: uppercase"/>
                         </div>
-                        <div class="col-md-6">
-                            <label for="endereco">Endereço</label>
-                            <input type="text" id="endereco" name="endereco" class="form-control"/>
+                <div class="row">
+                    <label for="email" class="col-sm-2">E-mail</label>
+                    <input type="email" id="email" name="email" class="col-sm-4" placeholder="Exemplo@hotmail.com" style="text-transform: uppercase"/>
 
-                        </div>
+                    <label for="cel" class="col-sm-2">Celular:</label>
+                    <input type="tel" id="cel" name="cel" class="col-sm-4" placeholder="(00) 0000-0000" style="text-transform: uppercase">
+                </div>
+                <div class="row">
+                    <label for="tel" class="col-sm-2">Telefone:</label>
+                    <input type="tel" id="tel" name="tel" class="col-sm-4" placeholder="(00) 0000-0000" style="text-transform: uppercase">
+
+                    <label for="rg" class="col-sm-2">RG:</label>
+                    <input type="number" id="rg" name="rg" class="col-sm-4" placeholder="000.000.000-00" style="text-transform: uppercase">
                     </div>
-                    {{----}}
+
+                <div class="row">
+                    <label for="cpf" class="col-sm-2">CPF: </label>
+                    <input pattern="" type="number" id="cpf" name="cpf" class="col-sm-4" placeholder="0.000.000" style="text-transform: uppercase">
+
+                    <label for="cep" class="col-sm-2">CEP:</label>
+                    <input type="number" id="cep" name="cep" class="col-sm-4" placeholder="00000-000" style="text-transform: uppercase">
+                </div>
+
+                <div class="row">
+                    <label for="nasci" class="col-sm-2">Nascimento:</label>
+                    <input type="date" name="nasci" id="nasci" class="col-sm-4" style="text-transform: uppercase">
+
+                    <label for="endereco" class="col-sm-2">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco" class="col-sm-4" placeholder="Endereço" style="text-transform: uppercase"/>
+
+                </div>
+                    </div>
+                <div class="row">
+                    <label for="estado" class="col-sm-2">Estado civil:</label>
+                    <select id="estado" class="col-md-4">
+                        <option>Selecione</option>
+                        <option>Solteiro(a)</option>
+                        <option>Casado(a)</option>
+                        <option>Divorciado(a)</option>
+                    </select>
+
+                        <label for="cor" class="col-md-2">Cor/Raça:</label>
+                        <select id="cor" class="col-md-4">
+                            <option>Selecione</option>
+                            <option>Branco</option>
+                            <option>Negro</option>
+                            <option>Pardo</option>
+                        </select>
+          </div>
+
+
+                {{----}}
                     {{--<div class="form-group">--}}
                         {{--<label for="endereco">Endereco:</label><textarea rows="1" cols="10"--}}
                                                                          {{--class="form-control"--}}
@@ -152,11 +194,15 @@
                             {{--<option>Preta</option>--}}
                         {{--</select><br>--}}
                     {{--</fieldset>--}}
-                </form>
+
             </div>
-            <div class="panel-footer">
-                rodape
+        <div class="panel-footer">
+            <div class="col-md-3" align="center">
+                <submit type="button" class="btn btn-primary" class="form-control">Salvar</submit>
+                <submit type="button" class="btn btn-primary" class="form-control">Voltar</submit>
             </div>
+
+        </div>
         </div>
     </div>
 @endsection
