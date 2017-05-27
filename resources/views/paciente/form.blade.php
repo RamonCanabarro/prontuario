@@ -14,12 +14,27 @@
                     <div class="col-md-10">
                         <input type="text" placeholder="Nome" id="nome" name="nome" required class="form-control"/>
                     </div>
-                        <label for="nome" class="control-label col-md-2">Nome</label>
+                    <label for="cpf" class="control-label col-md-2">CPF:</label>
                     <div class="col-md-10">
-                        <input type="text" placeholder="Nome" id="nome" name="nome" required class="form-control"/>
+                        <input type="number" placeholder="Cpf" id="cpf" name="cpf" required class="form-control"/>
+                    </div>
+                    <label for="rg" class="control-label col-md-2">RG:</label>
+                    <div class="col-md-10">
+                        <input type="number" placeholder="Rg" id="rg" name="rg" required class="form-control"/>
+                    </div>
+                    <label for="email" class="control-label col-md-2">E-mail:</label>
+                    <div class="col-md-10">
+                        <input type="email" placeholder="E-mail" id="email" name="email" required class="form-control"/>
+                    </div>
+                    <label for="nascimento" class="control-label col-md-2">Nascimento:</label>
+                    <div class="col-md-10">
+                        <input type="date" placeholder="" id="nascimento" name="nascimento" required class="form-control"/>
+                    </div>
+                    <label for="estado" class="control-label col-md-2">Estado civil:</label>
+                    <div class="col-md-10">
+                        <input type="text" placeholder="Estado civil" id="estado" name="estado" required class="form-control"/>
                     </div>
                 </div>
-
 
 
                 {{--Lado direito da pagina--}}
@@ -34,17 +49,27 @@
                         <input type="text" placeholder="(61) 99999-9999" id="celular" name="celular" required
                                class="form-control"/>
                     </div>
+                    <label for="cep" class="control-label col-md-2">CEP:</label>
+                    <div class="col-md-10">
+                        <input type="number" placeholder="Cep" id="cep" name="cep" required class="form-control"/>
+                    </div>
+                    <label for="endereco" class="control-label col-md-2">Endereço:</label>
+                    <div class="col-md-10">
+                        <input type="text" placeholder="Endereço" id="endereco" name="endereco" required class="form-control"/>
+                    </div>
+                    <label for="raca" class="control-label col-md-2">Raça:</label>
+                    <div class="col-md-10">
+                        <input type="text" placeholder="Raça" id="raca" name="raca" required class="form-control"/>
+                    </div>
 
                 </div>
 
 
-
-
-
             </div>
-            <div class="panel-footer" align="right">
-                <h6>Produzido por Fábrica de Softwares Jr</h6>
+
+            <div class="panel-footer" align="center">
+              <button type="submit" value="Enviar" class="btn btn-primary">Enviar</button>
+              <button type="reset" value="Cancelar" class="btn btn-primary">Cancelar</button>
             </div>
-        </div>
     </form>
 @endsection
