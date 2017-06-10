@@ -68,7 +68,7 @@
 
 </script>
 @section('conteudo')
-    <form action="list.php" method="post">
+    <form action="list.blade.php" method="post">
         <div class="panel panel-primary">
             <div class="panel-heading" align="center">
                 <h4>Cadastro de Pacientes</h4>
@@ -83,11 +83,11 @@
                     </div>
                     <label for="cpf" class="control-label col-md-2">CPF:</label>
                     <div class="col-md-10">
-                        <input type="number" placeholder="Cpf" id="cpf" name="cpf" required class="form-control"/>
+                        <input type="text" placeholder="Cpf" id="cpf" name="cpf" required class="form-control"/>
                     </div>
                     <label for="rg" class="control-label col-md-2">RG:</label>
                     <div class="col-md-10">
-                        <input type="number" placeholder="Rg" id="rg" name="rg" required class="form-control"/>
+                        <input type="text" placeholder="Rg" id="rg" name="rg" required class="form-control"/>
                     </div>
                     <label for="email" class="control-label col-md-2">E-mail:</label>
                     <div class="col-md-10">

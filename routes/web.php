@@ -17,7 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
+Route::group(['prefix'=>'paciente'], function (){
+    Route::get('/list', ['uses' => 'PacienteController@listagem', 'as' => 'paciente.list']);
+});
 //Route::get('/home', 'HomeController@index')->name('home');
 
 //inicio rotas de exemplo
