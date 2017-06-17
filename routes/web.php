@@ -23,7 +23,7 @@ Route::group(['prefix'=>'paciente'], function (){
 });
 Route::group(['prefix'=>'triagem'], function (){
     Route::get('/form', ['uses' => 'TriagemController@form', 'as' => 'triagem.form']);
-    Route::post('/form/{id}', ['uses' => 'TriagemController@alterar', 'as' => 'triagem.form']);
+    Route::get('/alterar/{id}', ['uses' => 'TriagemController@alterar', 'as' => 'triagem.form']);
 });
 //Route::get('/home', 'HomeController@index')->name('home');
 

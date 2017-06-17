@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Triagem;
 use Illuminate\Http\Request;
 
 class TriagemController extends Controller
@@ -13,7 +14,26 @@ class TriagemController extends Controller
     }
     public function form()
     {
-        $nome = 'Thiago';
-        return view('triagem.form', compact('nome'));
+        return view('triagem.form');
+    }
+    public function alterar($id){
+
+      $dados = Triagem::where('idteste', $id)->get()->first();
+
+//        echo '<pre>';
+//        print_r($tratardados['nome']);
+//        die;
+
+        return view ('triagem.form', compact('dados'));
+    }
+    public function salvar($dados)
+    {
+        $resultado = Triagem::salvar($dados);
+        if ($resultado){
+            return view('listagem');
+        }else
+        {
+            echo 'erro';
+        }
     }
 }
