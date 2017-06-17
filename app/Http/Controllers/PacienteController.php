@@ -12,4 +12,8 @@ class PacienteController extends Controller
     $dados = Paciente::all();
         return view('paciente.list', compact('dados'));
     }
+    public function form ()
+    {
+        return view('paciente.form');
+    }
 }

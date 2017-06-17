@@ -68,14 +68,15 @@
 
 </script>
 @section('conteudo')
+
     <form action="list.blade.php" method="post">
-        <div class="panel panel-primary">
+
             <div class="panel-heading" align="center">
                 <h4>Cadastro de Pacientes</h4>
             </div>
             <div class="panel-body form-horizontal">
 
-                {{--lado esquerdo da pagina--}}
+                lado esquerdo da pagina
                 <div class="col-md-6">
 
                     <label for="nome" class="control-label col-md-2">Nome</label>
@@ -90,7 +91,7 @@
                     <div class="col-md-10">
                         <input type="email" placeholder="E-mail" id="email" name="email" required class="form-control"/>
                     </div>
-
+                    <label for="nascimento" class="control-label col-md-2">Nascimento:</label>
                     <div class="col-md-10">
                         <input type="date" placeholder="" id="nascimento" name="nascimento" required
                                class="form-control"/>
@@ -115,7 +116,7 @@
                         <input type="text" id="orgao" name="orgao" required class="form-control">
                     </div>
                 </div>
-                {{--Lado direito da pagina--}}
+                Lado direito da pagina
                 <div class="col-md-6">
 
                     <label for="cep" class="control-label col-md-2">CEP:</label>
