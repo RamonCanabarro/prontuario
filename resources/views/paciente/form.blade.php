@@ -1,22 +1,22 @@
 @extends('layouts.app')
 <!-- Adicionando Javascript -->
-<script type="text/javascript" >
+<script type="text/javascript">
 
     function limpa_formulário_cep() {
         //Limpa valores do formulário de cep.
-        document.getElementById('rua').value=("");
-        document.getElementById('bairro').value=("");
-        document.getElementById('cidade').value=("");
-        document.getElementById('uf').value=("");
+        document.getElementById('rua').value = ("");
+        document.getElementById('bairro').value = ("");
+        document.getElementById('cidade').value = ("");
+        document.getElementById('uf').value = ("");
     }
 
     function meu_callback(conteudo) {
         if (!("erro" in conteudo)) {
             //Atualiza os campos com os valores.
-            document.getElementById('rua').value=(conteudo.logradouro);
-            document.getElementById('bairro').value=(conteudo.bairro);
-            document.getElementById('cidade').value=(conteudo.localidade);
-            document.getElementById('uf').value=(conteudo.uf);
+            document.getElementById('rua').value = (conteudo.logradouro);
+            document.getElementById('bairro').value = (conteudo.bairro);
+            document.getElementById('cidade').value = (conteudo.localidade);
+            document.getElementById('uf').value = (conteudo.uf);
         } //end if.
         else {
             //CEP não Encontrado.
@@ -37,19 +37,19 @@
             var validacep = /^[0-9]{8}$/;
 
             //Valida o formato do CEP.
-            if(validacep.test(cep)) {
+            if (validacep.test(cep)) {
 
                 //Preenche os campos com "..." enquanto consulta webservice.
-                document.getElementById('rua').value="...";
-                document.getElementById('bairro').value="...";
-                document.getElementById('cidade').value="...";
-                document.getElementById('uf').value="...";
+                document.getElementById('rua').value = "...";
+                document.getElementById('bairro').value = "...";
+                document.getElementById('cidade').value = "...";
+                document.getElementById('uf').value = "...";
 
                 //Cria um elemento javascript.
                 var script = document.createElement('script');
 
                 //Sincroniza com o callback.
-                script.src = '//viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+                script.src = '//viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
                 //Insere script no documento e carrega o conteúdo.
                 document.body.appendChild(script);
 
@@ -77,6 +77,7 @@
 
                 {{--lado esquerdo da pagina--}}
                 <div class="col-md-6">
+
                     <label for="nome" class="control-label col-md-2">Nome</label>
                     <div class="col-md-10">
                         <input type="text" placeholder="Nome" id="nome" name="nome" required class="form-control"/>
@@ -85,43 +86,44 @@
                     <div class="col-md-10">
                         <input type="text" placeholder="Cpf" id="cpf" name="cpf" required class="form-control"/>
                     </div>
-                    <label for="rg" class="control-label col-md-2">RG:</label>
-                    <div class="col-md-10">
-                        <input type="text" placeholder="Rg" id="rg" name="rg" required class="form-control"/>
-                    </div>
                     <label for="email" class="control-label col-md-2">E-mail:</label>
                     <div class="col-md-10">
                         <input type="email" placeholder="E-mail" id="email" name="email" required class="form-control"/>
                     </div>
-                    <label for="nascimento" class="control-label col-md-2">Nascimento:</label>
+
                     <div class="col-md-10">
                         <input type="date" placeholder="" id="nascimento" name="nascimento" required
                                class="form-control"/>
                     </div>
-                    <label for="estado" class="control-label col-md-2">Estado civil:</label>
+                    <label for="telefone" class="control-label col-md-2">Telefone:</label>
                     <div class="col-md-10">
-                        <input type="text" placeholder="Estado civil" id="estado" name="estado" required
+                        <input type="text" placeholder="telefone" id="telefone" name="telefone" required
                                class="form-control"/>
+                    </div>
+                    <label for="celular" class="control-label col-md-2">Celular:</label>
+                    <div class="col-md-10">
+                        <input type="text" id="celular" placeholder="(99) 9999-9999" name="celular"
+                               class="form-control">
+                    </div>
+                    <label for="rg" class="control-label col-md-2">RG:</label>
+                    <div class="col-md-10">
+                        <input type="text" placeholder="Rg" id="rg" name="rg" required class="form-control"/>
+                    </div>
+
+                    <label for="orgao" class="control-label col-md-2">Orgão espeditor</label>
+                    <div class="col-md-10">
+                        <input type="text" id="orgao" name="orgao" required class="form-control">
                     </div>
                 </div>
-
-
                 {{--Lado direito da pagina--}}
                 <div class="col-md-6">
-                    <label for="telefone" class="control-label col-md-2">Telefone</label>
-                    <div class="col-md-10">
-                        <input type="text" placeholder="(61) 3333-3333" id="telefone" name="telefone" required
-                               class="form-control"/>
-                    </div>
-                    <label for="celular" class="control-label col-md-2">Celular</label>
-                    <div class="col-md-10">
-                        <input type="text" placeholder="(61) 99999-9999" id="celular" name="celular" required
-                               class="form-control"/>
-                    </div>
+
                     <label for="cep" class="control-label col-md-2">CEP:</label>
                     <div class="col-md-10">
-                        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" class="form-control" onblur="pesquisacep(this.value);"/>
+                        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" class="form-control"
+                               onblur="pesquisacep(this.value);"/>
                     </div>
+
                     <label for="rua" class="control-label col-md-2">Endereço:</label>
                     <div class="col-md-10">
                         <input type="text" placeholder="rua" id="rua" name="rua" required
@@ -149,9 +151,22 @@
                     </div>
                     <label for="raca" class="control-label col-md-2">Raça:</label>
                     <div class="col-md-10">
-                        <input type="text" placeholder="Raça" id="raca" name="raca" required class="form-control"/>
+                        <select id="raca" name="raca" class="form-control">
+                            <option>Selecione</option>
+                            <option>Parda</option>
+                            <option>Negro</option>
+                            <option>Branco</option>
+                        </select>
                     </div>
-
+                    <label for="estado" class="control-label col-md-2">Estado Civil</label>
+                    <div class="col-md-10">
+                        <select id="estado" name="estado" class="form-control">
+                            <option>Selecione</option>
+                            <option>Solteiro</option>
+                            <option>Casado(a)</option>
+                            <option>Divorciado(a)</option>
+                        </select>
+                    </div>
                 </div>
 
 

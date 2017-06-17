@@ -1,156 +1,125 @@
-<!-- created by: Thiago !-->
-<!-- date: 07/05/2017 !-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<div class="panel-heading">
-    <center><h2>Triagem</h2></center>
-</div>
+@extends('layouts.app')
 
-<center>
-    <form method="POST" action="cadastro.php">
-        <div class="col-md-1"></div> <!-- borda esquerda !-->
-        <div class="col-md-10"> <!-- conteudo centralizado em 10 colunas !-->
-            <div class = "form-group">
+@section('content')
+    <div class="container">
 
-                <div class="row">
-                    <div class="col-md-3" align="left">
-                        <label for='data'>Data</label>
-                        <input type="date" class ="form-control" name="data" id="data"required>
-                    </div>
+        <div class="row">
+            <form>
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Triagem</div>
 
-                    <div class="col-md-5" align="left">
-                        <label for="modalidade">Modalidade</label>
-                        <div>
-                            <label class="radio-inline" for="modalidadeCrianca">
-                                <input type="radio" name="modalidade" id="modalidadeCrianca" value="modalidadeCrianca">
-                                Criança
-                            </label>
-                            <label class="radio-inline" for="modalidadeAdolescente">
-                                <input type="radio" name="modalidade" id="modalidadeAdolescente" value="modalidadeAdolescente">
-                                Adolescente
-                            </label>
-                            <label class="radio-inline" for="modalidadeAdulto">
-                                <input type="radio" name="modalidade" id="modalidadeAdulto" value="modalidadeAdulto" checked="checked">
-                                Adulto
-                            </label>
-                            <label class="radio-inline" for="modalidadeIdoso">
-                                <input type="radio" name="modalidade" id="modalidadeIdoso" value="modalidadeIdoso">
-                                Idoso
-                            </label>
+                        <div class="panel-body form-horizontal">
+                            <div class="col-md-6">
+                                <label for="queixa" class="control-label col-md-2">Queixa:</label>
+                                <div class="col-md-10">
+                                    <input type="text" id="queixa" name="queixa" class="form-control">
+                                </div>
+
+                                <label for="observacao" class="control-label col-md-2">Observação:</label>
+                                <div class="col-md-10">
+                                    <input type="text" id="observacao" name="observacao" class="form-control">
+                                </div>
+                                <fieldset>
+                                    <legend>Necessidade atendimento:</legend>
+                                    <div class="col-md-10">
+                                        <input type="radio" id="01" name="gender" class="form-control"><label
+                                                for="01"></label>
+                                        <input type="radio" id="02" name="gender" class="form-control"><label
+                                                for="02"></label>
+                                        <input type="radio" id="01" name="gender" class="form-control"><label
+                                                for="03"></label>
+                                    </div>
+                                </fieldset>
+                                <label for="visto" class="control-label col-md-2">Visto:</label>
+                                <div class="col-md-10">
+                                    <input type="radio" id="01" name="gender" class="form-control">
+                                </div>
+                                <label for="recusa" class="control-label col-md-10"> Recusa</label>
+                                <div class="col-md-10">
+                                    <input type="radio" id="recusa" name="gender" class="form-control">
+                                </div>
+                                <label for="motivo" class="control-label col-md-2">Motivo</label>
+                                <div class="col-md-10">
+                                    <input type="text" id="motivo" name="motivo" class="form-control">
+                                </div>
+                                <label for="data" class="control-label col-md-2">Data da recusa</label>
+                                <div class="col-md-10">
+                                    <input type="text" id="data" name="data" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="responsavel" class="control-label col-md-2">Responsavel</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="responsavel" name="responsavel">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="responsavel" class="control-label col-md-2">Responsavel</label>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="responsavel" name="responsavel">
+                                    </div>
+                                    <label for="familiar" class="control-label col-md-2">Alguem em sua residência estuda
+                                        em escola ou faculdade
+                                        partiular? </label>
+                                    <div class="form-group col-md-2">
+                                        <input type="radio" id="sim" name="gender"><label for="sim">Sim.</label>
+                                        <input type="radio" id="nao" name="gender"><label for="sim">Não.</label>
+                                        <label for="mensalidade">Se sim.Qual valor da mensalidade?</label>
+                                        <input type="text" id="nao" name="mensalidade">
+                                    </div>
+                                    <label for="nPessoas" class="control-label col-md-2">Quantas pessoas moram na sua
+                                        casa?</label>
+                                    <div class="form-group col-md-10">
+                                        <input type="number" id="nPessoas" name="nPessoas">
+                                    </div>
+                                    <label for="nTrabalham" class="control-label col-md-2">Quantos trabalham?</label>
+                                    <div class="form-group">
+                                        <input type="number" id="nTrabalham" name="nTrabalham">
+                                    </div>
+                                    <label for="tp_deficiencia" class="control-label col-md-2">Alguem de sua família tem
+                                        alguma doença mental ou
+                                        transtorno mental? </label>
+                                    <div class="form-group col-md-10">
+                                        <input type="radio" id="sim" name="gender"><label for="sim">Sim.</label>
+                                        <input type="radio" id="nao" name="gender"><label for="sim">Não.</label>
+                                    </div>
+                                    <label for="tx_deficiencia" class="control-label col-md-2"></label>
+                                    <div class="form-group col-md-10">
+                                        <input type="text" id="tx_deficiencia" name="tx_deficiencia"
+                                               class="form-control">
+                                    </div>
+                                    <label for="tp_acompanhamento_psic" class="control-label col-md-2">Você ou alguem da
+                                        família faz acompanhamento psiquiátrico?</label>
+                                    <div class="form-control">
+                                        <input type="radio" id="sim" name="gender"><label for="sim">Sim.</label>
+                                        <input type="radio" id="nao" name="gender"><label for="sim">Não.</label>
+                                    </div>
+                                    Se sim qual(is):
+                                    <div class="form-control">
+                                        <input type="checkbox" id="cigarro" name="gender"><label
+                                                for="cigarro">Cigarro.</label>
+                                        <input type="checkbox" id="alcool" name="gender"><label
+                                                for="alcool">Álcool.</label>
+                                        <input type="checkbox" id="craco" name="gender"><label
+                                                for="crack">Crack.</label>
+                                        <input type="checkbox" id="maconha" name="gender"><label
+                                                for="maconha">Maconha.</label>
+                                        <input type="checkbox" id="cocaina" name="gender"><label
+                                                for="cocaina">Cocaina.</label>
+                                    </div>
+                                    <label for='tx_relatorio'>Relatório</label>
+                                    <div class="col-md-6" align="left">
+                                        <textarea rows="4" cols="30" class="form-control" name="queixa" id="queixa"
+                                                  required
+                                                  placeholder=""></textarea>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col-md-4" align="left">
-                        <label for='inscricao'>Número de inscrição</label>
-                        <input type="number" class ="form-control" name="inscricao" id="inscricao"required>
-                    </div>
-
-                </div> <!-- primeira row !--> <br>
-@if($nome=='ricardo')
-                <div class="row">
-                    <div class="col-md-8" align="left">
-                        <label for='nome'>Nome do paciente</label>
-                        <input type="text" class ="form-control" name="nome" id="nome"required>
-                    </div>
-
-                    <div class="col-md-4"align="left">
-                        <label for='idade'>Idade</label>
-                        <input type="number" class ="form-control" name="idade" id="idade"required>
-                    </div>
-                </div> <!-- segunda row !--> <br>
-@else
-                <div class="row">
-                    <div class="col-md-6" align="left">
-                        <label for='triador'>Triador</label>
-                        <input type="text" class ="form-control" name="triador" id="triador"required>
-                    </div>
-
-                    <div class="col-md-6" align="left">
-                        <label for='supervisor'>Supervisor responsável</label>
-                        <input type="text" class ="form-control" name="supervisor" id="supervisor"required>
-                    </div>
-                </div> <!-- terceira row !--> <br>
-
-                <div class="row">
-                    <div class="col-md-6" align="left">
-                        <label for="atendimento">Tipos de atendimento</label>
-                        <div><b>Individual:</b>
-                            <label class="radio-inline" for="individualCrianca">
-                                <input type="radio" name="atendimento" id="individualCrianca" value="individualCrianca">
-                                Criança
-                            </label>
-                            <label class="radio-inline" for="individualAdolescente">
-                                <input type="radio" name="atendimento" id="individualAdolescente" value="individualAdolescente">
-                                Adolescente
-                            </label>
-                            <label class="radio-inline" for="individualAdulto">
-                                <input type="radio" name="atendimento" id="individualAdulto" value="individualAdulto" checked="checked">
-                                Adulto
-                            </label>
-                            <label class="radio-inline" for="individualIdoso">
-                                <input type="radio" name="atendimento" id="individualIdoso" value="individualIdoso">
-                                Idoso
-                            </label>
-                        </div>
-
-                        <div><b>Grupo:</b>
-                            <label class="radio-inline" for="grupoCrianca">
-                                <input type="radio" name="atendimento" id="grupoCrianca" value="grupoCrianca">
-                                Criança
-                            </label>
-                            <label class="radio-inline" for="grupoAdolescente">
-                                <input type="radio" name="atendimento" id="grupoAdolescente" value="grupoAdolescente">
-                                Adolescente
-                            </label>
-                            <label class="radio-inline" for="grupoMulher">
-                                <input type="radio" name="atendimento" id="grupoMulher" value="grupoMulher">
-                                Adulto
-                            </label>
-                            <label class="radio-inline" for="grupoHomem">
-                                <input type="radio" name="atendimento" id="grupoHomem" value="grupoHomem">
-                                Idoso
-                            </label>
-                            <label class="radio-inline" for="grupoEducacaoFamiliar">
-                                <input type="radio" name="atendimento" id="grupoEducacaoFamiliar" value="grupoEducacaoFamiliar">
-                                Idoso
-                            </label>
-                            <label class="radio-inline" for="grupoDrogadicao">
-                                <input type="radio" name="atendimento" id="grupoDrogadicao" value="grupoDrogadicao">
-                                Idoso
-                            </label>
-                        </div>
-
-                        <div><b>Temporário:</b>
-                            <label class="radio-inline" for="temporarioCasal">
-                                <input type="radio" name="atendimento" id="temporarioCasal" value="temporarioCasal">
-                                Criança
-                            </label>
-                            <label class="radio-inline" for="temporarioFamiliar">
-                                <input type="radio" name="atendimento" id="temporarioFamiliar" value="temporarioFamiliar">
-                                Adolescente
-                            </label>
-                            <label class="radio-inline" for="adulto">
-                                <input type="radio" name="atendimento" id="adulto" value="adulto">
-                                Adulto
-                            </label>
-                        </div>
-                    </div>
-                </div> <!-- row dos radios !--> <br>
-
-                <div class="row">
-                    <div class="col-md-12" align="left">
-                        <label for='queixa'>Queixa principal</label>
-                        <textarea rows="8" cols="50" class ="form-control" name="queixa" id="queixa" required placeholder="Escreva o motivo da solicitação do atendimento utilizando ao máximo as palavras do paciente"></textarea>
-                    </div>
-                </div><br>
-                <div align="right">
-                    <input type="reset" class="btn btn-danger" value="Cancelar">
-                    <input type="button" class="btn btn-primary" value="Enviar">
                 </div>
-
-            </div> <!-- form groups !-->
-        </div> <!-- conteudo centralizado em 10 colunas !-->
-@endif
-
-    </form>
-</center>
-
+            </form>
+        </div>
+    </div>
+    </div>
+@endsection
