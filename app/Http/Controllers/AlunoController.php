@@ -22,4 +22,9 @@ class AlunoController extends Controller
             Aluno::create($dados->all());
             return redirect(route('aluno.list'));
     }
+    public function deletar($dados)
+    {
+        Aluno::where('id_aluno',$dados)->delete();
+        return redirect(route('aluno.list'));
+    }
 }

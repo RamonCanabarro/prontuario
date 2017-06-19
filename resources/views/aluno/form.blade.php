@@ -37,7 +37,7 @@
 								<label for="tx_cidade">Cidade</label>
 							</div>
 							<div class="input-field col s1">
-								<input type="text" id="tx_uf" name="tx_uf" class="validate" required>
+								<input type="text" id="tx_uf" maxlength="2" name="tx_uf" class="validate" required>
 								<label for="tx_uf">UF</label>
 							</div>
 							<div class="input-field col s3">

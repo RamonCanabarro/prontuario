@@ -18,4 +18,5 @@ Route::group(['prefix'=>'aluno'], function (){
     Route::get('/', ['uses' => 'AlunoController@index', 'as' => 'aluno.list']);
     Route::get('/form', ['uses' => 'AlunoController@form', 'as' => 'aluno.form']);
     Route::post('/salvar', ['uses' => 'AlunoController@salvar', 'as' => 'aluno.salvar']);
+    Route::get('/deletar/{id}', ['uses' => 'AlunoController@deletar', 'as' => 'aluno.deletar']);
 });

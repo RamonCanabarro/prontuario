@@ -25,7 +25,7 @@
 									<a class="waves-effect waves-light" href="aluno/alterar"><i
 												class="material-icons left">mode_edit</i></a>
 
-									<a href="aluno/excluir/{{$dado['id_aluno']}}"><i
+									<a href="aluno/deletar/{{$dado['id_aluno']}}"><i
 												class="material-icons left red-text">delete</i></a>
 								</td>
 								<td>{{$dado['nu_codigo']}}</td>
