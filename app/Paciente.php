@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Paciente extends Model
 {
-    protected $table =  'teste';
+    protected $table =  'tb_aluno';
     public $timestamps = true;
-    protected $primaryKey = 'idteste';
-    protected $fillable = ['nome', 'telefone'];
+    protected $primaryKey = 'id_aluno';
+    protected $fillable = ['id_aluno','tx_nome', 'nu_fone'];
 }

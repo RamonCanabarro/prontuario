@@ -1,177 +1,193 @@
 @extends('layouts.app')
 <!-- Adicionando Javascript -->
-<script type="text/javascript">
+@section('conteudo')
+    <script type="text/javascript">
 
-    function limpa_formulário_cep() {
-        //Limpa valores do formulário de cep.
-        document.getElementById('rua').value = ("");
-        document.getElementById('bairro').value = ("");
-        document.getElementById('cidade').value = ("");
-        document.getElementById('uf').value = ("");
-    }
-
-    function meu_callback(conteudo) {
-        if (!("erro" in conteudo)) {
-            //Atualiza os campos com os valores.
-            document.getElementById('rua').value = (conteudo.logradouro);
-            document.getElementById('bairro').value = (conteudo.bairro);
-            document.getElementById('cidade').value = (conteudo.localidade);
-            document.getElementById('uf').value = (conteudo.uf);
-        } //end if.
-        else {
-            //CEP não Encontrado.
-            limpa_formulário_cep();
-            alert("CEP não encontrado.");
+        function limpa_formulário_cep() {
+            //Limpa valores do formulário de cep.
+            document.getElementById('rua').value = ("");
+            document.getElementById('bairro').value = ("");
+            document.getElementById('cidade').value = ("");
+            document.getElementById('uf').value = ("");
         }
-    }
 
-    function pesquisacep(valor) {
-
-        //Nova variável "cep" somente com dígitos.
-        var cep = valor;
-//                .replace(/\D/g, '');
-        //Verifica se campo cep possui valor informado.
-        if (cep != "") {
-
-            //Expressão regular para validar o CEP.
-            var validacep = /^[0-9]{8}$/;
-
-            //Valida o formato do CEP.
-            if (validacep.test(cep)) {
-
-                //Preenche os campos com "..." enquanto consulta webservice.
-                document.getElementById('rua').value = "...";
-                document.getElementById('bairro').value = "...";
-                document.getElementById('cidade').value = "...";
-                document.getElementById('uf').value = "...";
-
-                //Cria um elemento javascript.
-                var script = document.createElement('script');
-
-                //Sincroniza com o callback.
-                script.src = '//viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
-                //Insere script no documento e carrega o conteúdo.
-                document.body.appendChild(script);
-
+        function meu_callback(conteudo) {
+            if (!("erro" in conteudo)) {
+                //Atualiza os campos com os valores.
+                document.getElementById('rua').value = (conteudo.logradouro);
+                document.getElementById('bairro').value = (conteudo.bairro);
+                document.getElementById('cidade').value = (conteudo.localidade);
+                document.getElementById('uf').value = (conteudo.uf);
             } //end if.
             else {
-                //cep é inválido.
+                //CEP não Encontrado.
                 limpa_formulário_cep();
-                alert("Formato de CEP inválido.");
+                alert("CEP não encontrado.");
             }
-        } //end if.
-        else {
-            //cep sem valor, limpa formulário.
-            limpa_formulário_cep();
         }
-    };
 
-</script>
-@section('conteudo')
+        function pesquisacep(valor) {
 
-    <form action="list.blade.php" method="post">
+            //Nova variável "cep" somente com dígitos.
+            var cep = valor;
+//                .replace(/\D/g, '');
+            //Verifica se campo cep possui valor informado.
+            if (cep != "") {
 
-            <div class="panel-heading" align="center">
-                <h4>Cadastro de Pacientes</h4>
+                //Expressão regular para validar o CEP.
+                var validacep = /^[0-9]{8}$/;
+
+                //Valida o formato do CEP.
+                if (validacep.test(cep)) {
+
+                    //Preenche os campos com "..." enquanto consulta webservice.
+                    document.getElementById('rua').value = "...";
+                    document.getElementById('bairro').value = "...";
+                    document.getElementById('cidade').value = "...";
+                    document.getElementById('uf').value = "...";
+
+                    //Cria um elemento javascript.
+                    var script = document.createElement('script');
+
+                    //Sincroniza com o callback.
+                    script.src = '//viacep.com.br/ws/' + cep + '/json/?callback=meu_callback';
+                    //Insere script no documento e carrega o conteúdo.
+                    document.body.appendChild(script);
+
+                } //end if.
+                else {
+                    //cep é inválido.
+                    limpa_formulário_cep();
+                    alert("Formato de CEP inválido.");
+                }
+            } //end if.
+            else {
+                //cep sem valor, limpa formulário.
+                limpa_formulário_cep();
+            }
+        };
+
+    </script>
+
+    {{--<form >--}}
+{{--inicio da row 1--}}
+    <div class="row">
+    <form action="list.blade.php" method="post" class="col s12">
+    {{--inicio da row 2--}}
+        <div class="nav-wrapper" align="center">
+            <h4>Cadastro de paciente</h4>
+        </div>
+        <div class="row">
+            <div class="card">
+                <div class="card-image">
+
+        <div class="input-field col s6">
+        <input type="text" id="tx_nome" name="tx_nome" required class="validate"/>
+        <label for="tx_nome" class="active">Nome</label>
+    </div>
+        <div class="input-field col s6">
+        <input type="text"  id="nu_cpf" name="nu_cpf" required class="validate"/>
+        <label for="nu_cpf" class="active">CPF:</label>
+    </div>
+
+        <div class="input-field col s6">
+            <input type="text" placeholder="" id="nu_rg" name="nu_rg" required class="validate"/>
+            <label for="nu_rg" class="active">RG:</label>
+        </div>
+            <div class="input-field col s6">
+                <input type="text" id="tx_naturalidade" name="tx_naturalidade" required class="validate"/>
+                <label for="email" class="active">Naturalidade:</label>
             </div>
-            <div class="panel-body form-horizontal">
+            <div class="input-field col s6">
+                <input type="text" id="tx_uf_naturalidade" name="tx_naturalidade" required class="validate"/>
+                <label for="tx_uf_naturalidade" class="active">UF naturalidade:</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="text" id="tx_uf_orgao" name="tx_uf_orgao" required class="validate"/>
+                <label for="tx_uf_orgao" class="active">UF orgão:</label>
+            </div>
 
-                lado esquerdo da pagina
-                <div class="col-md-6">
+            <div class="input-field col s6">
+            <input type="text" id="tx_orgao_expe" name="tx_orgao_expe" required class="validate">
+            <label for="orgao" class="active">Orgão espeditor</label>
+        </div>
 
-                    <label for="nome" class="control-label col-md-2">Nome</label>
-                    <div class="col-md-10">
-                        <input type="text" placeholder="Nome" id="nome" name="nome" required class="form-control"/>
-                    </div>
-                    <label for="cpf" class="control-label col-md-2">CPF:</label>
-                    <div class="col-md-10">
-                        <input type="text" placeholder="Cpf" id="cpf" name="cpf" required class="form-control"/>
-                    </div>
-                    <label for="email" class="control-label col-md-2">E-mail:</label>
-                    <div class="col-md-10">
-                        <input type="email" placeholder="E-mail" id="email" name="email" required class="form-control"/>
-                    </div>
-                    <label for="nascimento" class="control-label col-md-2">Nascimento:</label>
-                    <div class="col-md-10">
-                        <input type="date" placeholder="" id="nascimento" name="nascimento" required
-                               class="form-control"/>
-                    </div>
-                    <label for="telefone" class="control-label col-md-2">Telefone:</label>
-                    <div class="col-md-10">
-                        <input type="text" placeholder="telefone" id="telefone" name="telefone" required
-                               class="form-control"/>
-                    </div>
-                    <label for="celular" class="control-label col-md-2">Celular:</label>
-                    <div class="col-md-10">
-                        <input type="text" id="celular" placeholder="(99) 9999-9999" name="celular"
-                               class="form-control">
-                    </div>
-                    <label for="rg" class="control-label col-md-2">RG:</label>
-                    <div class="col-md-10">
-                        <input type="text" placeholder="Rg" id="rg" name="rg" required class="form-control"/>
-                    </div>
+        <div class="input-field col s6">
+        <input type="text"  id="tx_responsavel" name="tx_responsavel" required class="validate"/>
+        <label for="tx_responsavel" class="active">Responsavel:</label>
+    </div>
+        <div class="input-field col s6">
+        <input type="text"  id="tx_parentesco" name="tx_parentesco" required class="validate"/>
+        <label for="tx_parentesco" class="active">Parentesco:</label>
+        </div>
 
-                    <label for="orgao" class="control-label col-md-2">Orgão espeditor</label>
-                    <div class="col-md-10">
-                        <input type="text" id="orgao" name="orgao" required class="form-control">
-                    </div>
-                </div>
-                Lado direito da pagina
-                <div class="col-md-6">
-
-                    <label for="cep" class="control-label col-md-2">CEP:</label>
-                    <div class="col-md-10">
-                        <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" class="form-control"
-                               onblur="pesquisacep(this.value);"/>
-                    </div>
-
-                    <label for="rua" class="control-label col-md-2">Endereço:</label>
-                    <div class="col-md-10">
-                        <input type="text" placeholder="rua" id="rua" name="rua" required
-                               class="form-control"/>
-                    </div>
-                    <label for="numero" class="control-label col-md-2">Numero:</label>
-                    <div class="col-md-10">
-                        <input type="text" placeholder="numero" id="numero" name="numero" required
-                               class="form-control"/>
-                    </div>
-                    <label for="bairro" class="control-label col-md-2">Bairro:</label>
-                    <div class="col-md-10">
-                        <input type="text" placeholder="bairro" id="bairro" name="bairro" required
-                               class="form-control"/>
-                    </div>
-                    <label for="cidade" class="control-label col-md-2">Cidade:</label>
-                    <div class="col-md-10">
-                        <input type="text" placeholder="cidade" id="cidade" name="cidade" required
-                               class="form-control"/>
-                    </div>
-                    <label for="uf" class="control-label col-md-2">UF:</label>
-                    <div class="col-md-10">
-                        <input type="text" placeholder="uf" id="uf" name="uf" required
-                               class="form-control"/>
-                    </div>
-                    <label for="raca" class="control-label col-md-2">Raça:</label>
-                    <div class="col-md-10">
-                        <select id="raca" name="raca" class="form-control">
-                            <option>Selecione</option>
-                            <option>Parda</option>
-                            <option>Negro</option>
-                            <option>Branco</option>
-                        </select>
-                    </div>
-                    <label for="estado" class="control-label col-md-2">Estado Civil</label>
-                    <div class="col-md-10">
-                        <select id="estado" name="estado" class="form-control">
-                            <option>Selecione</option>
-                            <option>Solteiro</option>
-                            <option>Casado(a)</option>
-                            <option>Divorciado(a)</option>
-                        </select>
-                    </div>
+                <div class="input-field col s6">
+                    <input type="date"  id="dt_nascimento" name="dt_nascimento" required class="validate"/>
+                    <label for="nascimento" class="active">Nascimento:</label>
                 </div>
 
+                <div class="input-field col s6">
+                    <label for="nu_telefone" class="active">Telefone:</label>
+                    <input type="text" id="nu_telefone" name="nu_telefone" required
+                    class="validate"/>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" id="nu_fone1" placeholder=""name="nu_fone1" class="active">
+                    <label for="nu_fone1" class="active">Celular:</label>
 
-            </div>
+                </div>
+    </div>
+        {{--fim da row 2--}}
+        {{--inicio da row 3--}}
+
+        <div class="row">
+                    <div class="input-field col s6">
+                        <input name="nu_cep" type="text" id="nu_cep" value="" size="10" maxlength="9" class="validate"
+                        onblur="pesquisacep(this.value);"/>
+                        <label for="nu_cep" class="active">CEP:</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <label for="tx_endereco" class="active">Endereço:</label>
+                        <input type="text" placeholder="" id="tx_endereco" name="tx_endereco" required class="validate"/>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" placeholder="" id="nu_numero" name="nu_numero" required
+                        class="validate"/>
+                        <label for="numero" class="active">Numero:</label>
+                    </div>
+                    <div class="input-field col  s6">
+                        <input type="text" placeholder="" id="tx_bairro" name="tx_bairro" required
+                        class="validate"/>
+                        <label for="tx_bairro" class="active">Bairro:</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" placeholder="" id="tx_cidade" name="tx_cidade" required
+                        class="validate"/>
+                        <label for="tx_cidade" class="active">Cidade:</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" placeholder="" id="uf" name="uf" required
+                        class="form-control"/>
+                        <label for="uf" class="control-label col-md-2">UF:</label>
+                    </div>
+
+                   <div class="input-field col s6">
+                   <label for="active">Raça:</label><br>
+                       <input type="radio" id="Negro" name="tx_raca" class="validate"><label for="Negro">Negro</label>
+                       <input type="radio" id="Branco" name="tx_raca" class="validate"><label for="Branco">Branco</label>
+                       <input type="radio" id="Pardo" name="tx_raca" class="validate"><label for="Pardo">Pardo</label>
+                   </div>
+                   </div>
+                    <div class="input-field s6">
+                        <label for="estado" class="active">Estado Civil</label>
+                        <input type="radio" id="solteiro" name="tx_estado_civil" class="tx_estado_civil"><label for="solteiro">Solteiro</label>
+                        <input type="radio" id="casado" name="tx_estado_civil" class="validate"><label for="casado">Casado(a)</label>
+                        <input type="radio" id="divorciado" name="tx_estado_civil" class="validate"><label for="divorciado">Divorciado(a)</label>
+                        </div>
+                </div>
+        </div>
+    </form></div></div>
 
             <div class="panel-footer" align="center">
                 <button type="submit" value="Enviar" class="btn btn-success">Enviar</button>
