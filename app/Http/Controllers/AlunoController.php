@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Aluno;
-use Illuminate\Http\Request;
+use App\Http\Requests\AlunoRequest;
 
 class AlunoController extends Controller
 {
@@ -16,5 +16,10 @@ class AlunoController extends Controller
     public function form()
     {
             return view('aluno.form');
+    }
+    public function salvar(AlunoRequest $dados)
+    {
+            Aluno::create($dados->all());
+            return redirect(route('aluno.list'));
     }
 }

@@ -37,7 +37,7 @@
 					</table>
 				</div>
 				<div class="right-align">
-					<a class="btn-floating btn-large waves-effect waves-light" href="aluno/form"><i
+					<a class="btn-floating btn-large waves-effect waves-light" href="{{route('aluno.form')}}"><i
 								class="material-icons">add</i></a>
 				</div>
 			</div>
