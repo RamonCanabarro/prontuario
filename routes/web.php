@@ -12,23 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
-
-Auth::routes();
-
-Route::group(['prefix'=>'paciente'], function (){
-    Route::get('/list', ['uses' => 'PacienteController@listagem', 'as' => 'paciente.list']);
-    Route::get('/form', ['uses' => 'PacienteController@form', 'as' => 'paciente.form']);
+Route::group(['prefix'=>'aluno'], function (){
+    Route::get('/', ['uses' => 'AlunoController@index', 'as' => 'aluno.list']);
+    Route::get('/form', ['uses' => 'AlunoController@form', 'as' => 'aluno.form']);
+    Route::post('/salvar', ['uses' => 'AlunoController@salvar', 'as' => 'aluno.salvar']);
+    Route::get('/deletar/{id}', ['uses' => 'AlunoController@deletar', 'as' => 'aluno.deletar']);
 });
-Route::group(['prefix'=>'triagem'], function (){
-    Route::get('/form', ['uses' => 'TriagemController@form', 'as' => 'triagem.form']);
-    Route::get('/alterar/{id}', ['uses' => 'TriagemController@alterar', 'as' => 'triagem.form']);
-});
-//Route::get('/home', 'HomeController@index')->name('home');
-
-//inicio rotas de exemplo
-////
-////Route::get('/teste', ['uses' => 'TesteController@index', 'as' => 'teste.index']);
-//Route::get('/triagem/index', ['uses' => 'TriagemController@index', 'as' => 'triagem.index']);
-//Route::get('/triagem/form', ['uses' => 'TriagemController@form', 'as' => 'triagem.form']);
