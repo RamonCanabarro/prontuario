@@ -72,7 +72,7 @@
     {{--<form >--}}
 {{--inicio da row 1--}}
     <div class="row">
-    <form action="list.blade.php" method="post" class="col s12">
+    <form action="index.blade.php" method="post" class="col s12">
     {{--inicio da row 2--}}
         <div class="nav-wrapper" align="center">
             <h4>Cadastro de paciente</h4>
