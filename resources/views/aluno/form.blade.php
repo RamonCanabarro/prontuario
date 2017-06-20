@@ -2,6 +2,18 @@
 @section('titulo', 'Cadastro de Aluno')
 
 @section('conteudo')
+	<script>
+        $(document).ready(function () {
+            $("#nu_fone").mask("(99) 9999-9999?9");
+        });
+        $(document).ready(function () {
+            $("#nu_cep").mask("99999-999");
+        });
+        $(document).ready(function () {
+            $("#nu_fone2").mask("(99) 9999-9999?9");
+        });
+
+	</script>
 	<div class="row">
 		<div class="col s10 offset-s1">
 			<div class="card">

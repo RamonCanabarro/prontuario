@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('paciente.list');
+    return view('home');
 });
 Route::group(['prefix'=>'aluno'], function (){
     Route::get('/', ['uses' => 'AlunoController@index', 'as' => 'aluno.list']);
@@ -22,7 +22,7 @@ Route::group(['prefix'=>'aluno'], function (){
     });
 
 Route::group(['prefix'=>'paciente'], function () {
-    Route::get('/', ['uses' => 'PacienteController@list', 'as' => 'paciente.list']);
+    Route::get('/', ['uses' => 'PacienteController@index', 'as' => 'paciente.index']);
     Route::get('/form', ['uses' => 'PacienteController@form', 'as' => 'paciente.form']);
 });
 
