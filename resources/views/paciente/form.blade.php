@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('templates/principal')
 <!-- Adicionando Javascript -->
 @section('conteudo')
     <script type="text/javascript">

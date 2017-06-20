@@ -12,11 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('paciente.list');
 });
 Route::group(['prefix'=>'aluno'], function (){
     Route::get('/', ['uses' => 'AlunoController@index', 'as' => 'aluno.list']);
     Route::get('/form', ['uses' => 'AlunoController@form', 'as' => 'aluno.form']);
     Route::post('/salvar', ['uses' => 'AlunoController@salvar', 'as' => 'aluno.salvar']);
     Route::get('/deletar/{id}', ['uses' => 'AlunoController@deletar', 'as' => 'aluno.deletar']);
+    });
+
+Route::group(['prefix'=>'paciente'], function () {
+    Route::get('/', ['uses' => 'PacienteController@list', 'as' => 'paciente.list']);
+    Route::get('/form', ['uses' => 'PacienteController@form', 'as' => 'paciente.form']);
+});
+
+Route::group(['prefix'=>'triagem'], function () {
+    Route::get('/', ['uses' => 'TriagemController@list', 'as' => 'triagem.list']);
+    Route::get('/form', ['uses' => 'TriagemController@form', 'as' => 'triagem.form']);
 });
