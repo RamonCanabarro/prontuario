@@ -1,43 +1,51 @@
 @extends('templates/principal')
 @section('conteudo')
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <div class="panel panel-primary">
 
-        <div class="panel-heading" align="center">
+    <div class="row">
+        <div class="col s10 offset-s1">
+            <div class="card">
+                <div class="card-content">
+                    <div>
+                    <div class="panel-heading" align="center">
             Listam de pacientes
         </div>
         <div class="panel-body">
             <table class="table table-striped">
                 <tr>
                     <th>Ações</th>
-                    <th>Código</th>
+                    <th>Id</th>
                     <th>Nome</th>
-                    <th>CPF</th>
-                    <th>Telefone</th>
+                    <th>email</th>
+                    <th>data</th>
                 </tr>
                 @foreach($dados as $dado)
 
                 <tr>
-                    <td>
-                        <i class="tiny material-icons">mode_edit</i>
-                        <i class="tiny material-icons">delete</i>
-                    </td>
-                    <td>{{$dado['id_aluno']}}</td>
-                    <td>{{ $dado['tx_nome']}}</td>
-                    <td>{{ $dado['nu_fone']}}</td>
+                    <td>		<a class="waves-effect waves-light" href="paciente/alterar"><i
+                                    class="material-icons left">mode_edit</i></a>
 
-                    <?php echo '<pre>';
-                   print_r($dados);
-                   echo '</pre>';
-                   ?>
-                </tr>
+                        <a href="paciente/deletar/{{$dado['id']}}"><i
+                                    class="material-icons left red-text">delete</i></a>
+
+                    </td>
+                    <td>{{$dado['id']}}</td>
+                    <td>{{$dado['name']}}</td>
+                    <td>{{ $dado['email']}}</td>
+                    <td>{{ $dado['created_at']}}</td>
+
+         </tr>
                 @endforeach;
 
             </table>
+        </div>
+        <div class="right-align">
+            <a class="btn-floating btn-large waves-effect waves-light" href="{{route('paciente.form')}}"><i
+                        class="material-icons">add</i></a>
         </div>
         <div class="panel-footer">
             <h6>Produzido por Fábrica de Softwares Jr.</h6>
         </div>
     </div>
+                </div></div></div></div>
 @endsection

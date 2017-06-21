@@ -15,7 +15,19 @@ class TriagemController extends Controller
     {
         $dados = Triagem::all();
 
-        return view('triagem.list', compact('dados'));
+        return view('triagem.index', compact('dados'));
     }
+
+    public function salvar(TriagemRequest $dados)
+    {
+        Aluno::create($dados->all());
+        return redirect(route('triagem.index'));
+    }
+    public function deletar($dados)
+    {
+        Aluno::where('id_triagem',$dados)->delete();
+        return redirect(route('triagem.index'));
+    }
+
 }
 

@@ -24,9 +24,11 @@ Route::group(['prefix'=>'aluno'], function (){
 Route::group(['prefix'=>'paciente'], function () {
     Route::get('/', ['uses' => 'PacienteController@index', 'as' => 'paciente.index']);
     Route::get('/form', ['uses' => 'PacienteController@form', 'as' => 'paciente.form']);
+    Route::post('/salvar', ['uses' => 'PacienteController@salvar', 'as' => 'paciente.salvar']);
+
 });
 
 Route::group(['prefix'=>'triagem'], function () {
-    Route::get('/', ['uses' => 'TriagemController@list', 'as' => 'triagem.list']);
+    Route::get('/', ['uses' => 'TriagemController@index', 'as' => 'triagem.index']);
     Route::get('/form', ['uses' => 'TriagemController@form', 'as' => 'triagem.form']);
 });

@@ -18,4 +18,15 @@ class PacienteController extends Controller
 
         return view('paciente.index', compact('dados'));
     }
+    public function salvar(PacienteRequest $dados)
+    {
+        Aluno::create($dados->all());
+        return redirect(route('paciente.list'));
+    }
+    public function deletar($dados)
+    {
+        Aluno::where('id_paciente',$dados)->delete();
+        return redirect(route('paciente.list'));
+    }
+
 }
