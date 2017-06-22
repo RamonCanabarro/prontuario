@@ -22,10 +22,10 @@
                         @foreach($dados as $dado)
                             <tr>
                                 <td>
-                                    <a class="waves-effect waves-light" href="paciente/alterar"><i
+                                    <a class="waves-effect waves-light" href="supervisor/alterar"><i
                                                 class="material-icons left">mode_edit</i></a>
 
-                                    <a href="aluno/deletar/{{$dado['id_funcionario']}}"><i
+                                    <a href="supervisor/deletar/{{$dado['id_supervisor']}}"><i
                                                 class="material-icons left red-text">delete</i></a>
                                 </td>
                                 <td>{{$dado['nu_codigo']}}</td>
@@ -37,7 +37,7 @@
                     </table>
                 </div>
                 <div class="right-align">
-                    <a class="btn-floating btn-large waves-effect waves-light" href="{{route('funcionario.form')}}"><i
+                    <a class="btn-floating btn-large waves-effect waves-light" href="{{route('supervisor.form')}}"><i
                                 class="material-icons">add</i></a>
                 </div>
             </div>

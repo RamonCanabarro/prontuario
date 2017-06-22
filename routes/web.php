@@ -33,9 +33,9 @@ Route::group(['prefix' => 'paciente'], function () {
     Route::get('/form', ['uses' => 'TriagemController@form', 'as' => 'triagem.form']);
 });
 
-Route::group(['prefix' => 'funcionario'], function () {
-    Route::get('/', ['uses' => 'FuncionarioController@index', 'as' => 'funcionario.index']);
-    Route::get('/form', ['uses' => 'FuncionarioController@form', 'as' => 'funcionario.form']);
-    Route::post('/salvar', ['uses' => 'FuncionarioController@salvar', 'as' => 'funcionario.salvar']);
-
+    Route::group(['prefix' => 'supervisor'], function () {
+    Route::get('/', ['uses' => 'SupervisorController@index', 'as' => 'supervisor.index']);
+    Route::get('/form', ['uses' => 'SupervisorController@form', 'as' => 'supervisor.form']);
+    Route::post('/salvar', ['uses' => 'SupervisorController@salvar', 'as' => 'supervisor.salvar']);
+    Route::get('/deletar/{id}', ['uses' => 'SupervisorController@deletar', 'as' => 'supervisor.deletar']);
 });

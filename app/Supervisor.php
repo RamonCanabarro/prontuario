@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-class Funcionario extends Model
+class Supervisor extends Model
 {
     protected $table      = 'tb_supervisor';
     public $timestamps    = true;

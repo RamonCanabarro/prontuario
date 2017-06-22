@@ -21,7 +21,7 @@
                     <div>
                         <h4 class="grey-text" align="center">Cadastro de Supervisor</h4>
                     </div>
-                    <form method="post" action={{route('funcionario.salvar')}}>
+                    <form method="post" action={{route('supervisor.salvar')}}>
                         {{ csrf_field() }}
                         <div class="row">
                             <div class="input-field col s8">
@@ -62,7 +62,7 @@
                             </div>
                         </div>
                         <input type="submit" value="Salvar" id="salvar" name="salvar" class="btn btn-success">
-                        <a href="{{route('funcionario.index')}}" class="btn red">Cancelar</a>
+                        <a href="{{route('supervisor.index')}}" class="btn red">Cancelar</a>
                     </form>
                 </div>
             </div>

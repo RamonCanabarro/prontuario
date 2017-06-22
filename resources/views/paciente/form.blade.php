@@ -72,17 +72,19 @@
     {{--<form >--}}
     {{--inicio da row 1--}}
     <div class="row">
-        <div class="nav-wrapper" align="center">
-            <h4>Cadastro de paciente</h4>
-        </div>
         <div class="row">
             <div class="card">
-                <div class="card-image">
+                <div class="card-content">
+                    <div align="center">
+                        <h4>Cadastro de paciente</h4>
+                    </div>
+
                     <form method="post" action={{route('paciente.salvar')}}>
+                        {{ csrf_field() }}
 
                         <div class="input-field col s3">
                             <input type="text" id="tx_nome" name="tx_nome" required class="validate"/>
-                            <label for="tx_nome">Nome</label>
+                            <label for="tx_nome" class="">Nome</label>
                         </div>
                         <div class="input-field col s3">
                             <input type="text" id="nu_cpf" name="nu_cpf" required class="validate"/>
@@ -98,7 +100,7 @@
                             <label for="email">Naturalidade:</label>
                         </div>
                         <div class="input-field col s3">
-                            <input type="text" id="tx_uf_naturalidade" name="tx_naturalidade" required
+                            <input type="text" id="tx_uf_naturalidade" name="tx_uf_naturalidade" required
                                    class="validate"/>
                             <label for="tx_uf_naturalidade">UF naturalidade:</label>
                         </div>
@@ -113,8 +115,9 @@
                         </div>
 
                         <div class="input-field col s3">
-                            <input type="text" id="tx_responsavel" name="tx_responsavel" required class="validate"/>
-                            <label for="tx_responsavel">Responsavel:</label>
+                            <input type="text" id="tx_nome_responsavel" name="tx_nome_responsavel" required
+                                   class="validate"/>
+                            <label for="tx_nome_responsavel">Responsavel:</label>
                         </div>
                         <div class="input-field col s3">
                             <input type="text" id="tx_parentesco" name="tx_parentesco" required class="validate"/>
@@ -127,9 +130,9 @@
                         </div>
 
                         <div class="input-field col s3">
-                            <input type="text" id="nu_telefone" name="nu_telefone" required
+                            <input type="text" id="nu_fone" name="nu_fone" required
                                    class="validate"/>
-                            <label for="nu_telefone">Telefone:</label>
+                            <label for="nu_fone">Telefone:</label>
                         </div>
                         <div class="input-field col s3">
                             <input type="text" id="nu_fone1" placeholder="" name="nu_fone1" class="active">
@@ -169,61 +172,93 @@
                             <label for="uf">UF:</label>
                         </div>
 
+                        <div class="input col s6" align="left">
+                            <b>Tipos de atendimento</b>
+                            <input type="radio" name="tp_atendimento" id="C" value="C">
+                            <label class="active" for="C">Criança</label>
 
-                        <div class="input-field s12">
-                            <b>Orientação sexual:</b>
-                            <p>
-                                <input type="radio" id="homossexual" class="with-gap" name="tp_orientacao_sexual"><label
-                                        class="active"
-                                        for="homossexual">Homossexual</label>
-                                <input type="radio" id="heterossexual" class="with-gap"
-                                       name="tp_orientacao_sexual"><label
-                                        class="active"
-                                        for="heterossexual">Heterossexual</label>
-                                <input type="radio" id="assexual" class="with-gap" name="tp_orientacao_sexual"><label
-                                        class="active"
-                                        for="assexual">Assexual</label>
-                            </p></div>
+                            <input type="radio" name="tp_atendimento" id="D" value="D">
+                            <label class="active" for="D">Adolescente</label>
 
-                        <div class="input-field s6">
-                            <p>
-                                <b>Sexo</b>
-                                <input type="radio" id="masculino" name="tx_sexo" class="with-grap"><label
-                                        for="masculino">Masculino</label>
-                                <input type="radio" id="feminino" name="tx_sexo" class="with-grap"><label
-                                        for="feminino">Feminino</label>
-                            </p>
-                            <p>
-                                <b>Raça:</b>
-                                <input type="radio" id="negro" name="tx_raca" class="with-grap"><label
-                                        for="negro">Negro</label>
-                                <input type="radio" id="Branco" name="tx_raca" class="with-grap"><label
-                                        for="Branco">Branco</label>
-                                <input type="radio" id="Pardo" name="tx_raca" class="with-grap"><label
-                                        for="Pardo">Pardo</label>
-                            </p>
-                            <p>
-                                <b>Estado Civil</b>
-                                <input type="radio" id="solteiro" name="tx_estado_civil" class="with-gap"><label
-                                        for="solteiro">Solteiro</label>
-                                <input type="radio" id="casado" name="tx_estado_civil" class="with-gap"><label
-                                        for="casado">Casado(a)</label>
-                                <input type="radio" id="divorciado" name="tx_estado_civil" class="with-gap"><label
-                                        for="divorciado">Divorciado(a)</label>
-                            </p>
+                            <input type="radio" name="tp_atendimento" id="A" value="A">
+                            <label class="active" for="A">Adulto</label>
+
+                            <input type="radio" name="tp_atendimento" id="I" value="I">
+                            <label class="active" for="I">Idoso</label>
+
                         </div>
+                        <p>
+                            <b>Orientação sexual:</b>
+                            <input type="radio" id="homossexual" class="with-gap" name="tp_orientacao_sexual" value="H"><label
+                                    class="active"
+                                    for="homossexual">Homossexual</label>
+                            <input type="radio" id="heterossexual" class="with-gap"
+                                   name="tp_orientacao_sexual" value="T"><label
+                                    class="active"
+                                    for="heterossexual">Heterossexual</label>
+                            <input type="radio" id="assexual" class="with-gap" name="tp_orientacao_sexual"
+                                   value="A"><label
+                                    class="active"
+                                    for="assexual">Assexual</label>
 
+                            <input type="radio" id="bissexual" class="with-gap" name="tp_orientacao_sexual"
+                                   value="B"><label
+                                    class="active"
+                                    for="bissexual">Bissexual</label>
+                        </p>
+
+                        <p>
+                            <b>Sexo</b>
+                            <input type="radio" id="masculino" name="tx_sexo" class="with-grap" value="M"><label
+                                    for="masculino">Masculino</label>
+                            <input type="radio" id="feminino" name="tx_sexo" class="with-grap" value="F"><label
+                                    for="feminino">Feminino</label>
+                        </p>
+
+                        <p>
+                            <b>Raça:</b>
+                            <input type="radio" id="negro" name="tx_raca" class="with-grap" value="N"><label
+                                    for="negro">Negro</label>
+                            <input type="radio" id="Branco" name="tx_raca" class="with-grap" value="B"><label
+                                    for="Branco">Branco</label>
+                            <input type="radio" id="Pardo" name="tx_raca" class="with-grap" value="P"><label
+                                    for="Pardo">Pardo</label>
+
+                            <input type="radio" id="indigena" name="tx_raca" class="with-grap" value="I"><label
+                                    for="indigena">Indígena</label>
+                        </p>
+
+                        <p>
+                            <b>Estado Civil</b>
+                            <input type="radio" id="solteiro" name="tx_estado_civil" value="S" class="with-gap"><label
+                                    for="solteiro">Solteiro</label>
+                            <input type="radio" id="casado" name="tx_estado_civil" class="with-gap" value="C"><label
+                                    for="casado">Casado(a)</label>
+                            <input type="radio" id="divorciado" name="tx_estado_civil" class="with-gap" value="D"><label
+                                    for="divorciado">Divorciado(a)</label>
+                        </p>
+
+
+                        <div class="input-field col s3">
+                            <input type="text" placeholder="" id="aluno" name="fk_aluno" required
+                                   class="validate"/>
+                            <label for="aluno">Aluno:</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <input type="text" placeholder="" id="supervisor" name="fk_supervisor" required
+                                   class="validate"/>
+                            <label for="supervisor">Supervisor:</label>
+                        </div>
+                        <div class="panel-footer" align="center">
+                            <input type="submit" name="Enviar" class="btn btn-success">
+                            <a type="reset" value="Cancelar" href="{{route('paciente.index')}}" class="btn btn-warning">Cancelar</a>
+                        </div>
                     </form>
-                    <div class="panel-footer" align="center">
-                        <input type="submit" name="Enviar" href="{{route('paciente.index')}}"
-                               class="btn btn-success">
-                        <a type="reset" value="Cancelar" class="btn btn-warning">Cancelar</a>
-                    </div>
 
                 </div>
             </div>
         </div>
     </div>
-    </div>
-    </form>
+
+
 @endsection
