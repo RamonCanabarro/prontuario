@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Triagem;
-use Illuminate\Http\Request;
+use App\Http\Requests\TriagemRequest;
 
 class TriagemController extends Controller
 {
