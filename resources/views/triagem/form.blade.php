@@ -344,14 +344,11 @@
 
                         <div class="input-field col s4" align="left">
                             <label for='observacao' class="active">Observação:</label>
-                            <textarea rows="4" cols="50" class="validate" name="observacao" id="observacao"
-                                      required
-                                      placeholder=""></textarea>
+                            <input type="text" class="validate" name="observacao" id="observacao"
+                                      required>
                         </div>
-                        <div class="panel-footer" align="center">
-                            <input type="submit" name="Enviar" class="btn btn-success">
-                            <a type="reset" value="Cancelar" href="{{route('triagem.index')}}" class="btn btn-warning">Cancelar</a>
-                        </div>
+                        <input type="submit" value="Salvar" id="salvar" name="salvar" class="btn btn-success">
+                        <a href="{{route('triagem.index')}}" class="btn red">Cancelar</a>
                     </form>
                 </div>
             </div>
