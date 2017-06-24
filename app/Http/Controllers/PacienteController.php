@@ -30,4 +30,9 @@ class PacienteController extends Controller
         Paciente::where('id_paciente', $dados)->delete();
         return redirect(route('paciente.index'));
     }
+    public function alterar()
+    {
+        Paciente::insert('id_paciente', $dados)->updated();
+        return redirect(route('paciente.form'));
+    }
 }

@@ -20,12 +20,12 @@ class TriagemController extends Controller
 
     public function salvar(TriagemRequest $dados)
     {
-        Aluno::create($dados->all());
+        Triagem::create($dados->all());
         return redirect(route('triagem.index'));
     }
     public function deletar($dados)
     {
-        Aluno::where('id_triagem',$dados)->delete();
+        Triagem::where('id_triagem',$dados)->delete();
         return redirect(route('triagem.index'));
     }
 

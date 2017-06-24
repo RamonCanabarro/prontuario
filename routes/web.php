@@ -26,12 +26,14 @@ Route::group(['prefix' => 'paciente'], function () {
     Route::get('/form', ['uses' => 'PacienteController@form', 'as' => 'paciente.form']);
     Route::post('/salvar', ['uses' => 'PacienteController@salvar', 'as' => 'paciente.salvar']);
     Route::get('/deletar/{id}', ['uses' => 'PacienteController@deletar', 'as' => 'paciente.deletar']);
+    Route::get('/alterar/{id}', ['uses' => 'PacienteController@alterar', 'as' => 'paciente.alterar']);
 });
 
     Route::group(['prefix' => 'triagem'], function () {
     Route::get('/', ['uses' => 'TriagemController@index', 'as' => 'triagem.index']);
     Route::get('/form', ['uses' => 'TriagemController@form', 'as' => 'triagem.form']);
-});
+    Route::post('/salvar', ['uses' => 'TriagemController@salvar', 'as' => 'triagem.salvar']);
+    });
 
     Route::group(['prefix' => 'supervisor'], function () {
     Route::get('/', ['uses' => 'SupervisorController@index', 'as' => 'supervisor.index']);
