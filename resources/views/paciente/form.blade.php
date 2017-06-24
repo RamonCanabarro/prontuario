@@ -267,71 +267,72 @@
 @extends('templates/principal')
 <!-- Adicionando Javascript -->
 @section('conteudo')
-    <script type="text/javascript">
+    <script type="text/javascript" >
 
-        function limpa_formulário_cep() {
-            //Limpa valores do formulário de cep.
-            document.getElementById('tx_endereco').value = ("");
-            document.getElementById('tx_bairro').value = ("");
-            document.getElementById('tx_cidade').value = ("");
-            document.getElementById('tx_uf').value = ("");
-        }
+        $(document).ready(function() {
 
-        function meu_callback(conteudo) {
-            if (!("erro" in conteudo)) {
-                //Atualiza os campos com os valores.
-                document.getElementById('tx_endereco').value = (conteudo.logradouro);
-                document.getElementById('tx_bairro').value = (conteudo.bairro);
-                document.getElementById('tx_cidade').value = (conteudo.localidade);
-                document.getElementById('tx_uf').value = (conteudo.uf);
-            } //end if.
-            else {
-                //CEP não Encontrado.
-                limpa_formulário_cep();
-                alert("CEP não encontrado.");
+            function limpa_formulário_cep() {
+                // Limpa valores do formulário de cep.
+                $("#tx_endereco").val("");
+                $("#tx_bairro").val("");
+                $("#tx_cidade").val("");
+                $("#tx_uf").val("");
+                //   $("#ibge").val("");
             }
-        }
 
-        function pesquisacep(valor) {
+            //Quando o campo cep perde o foco.
+            $("#nu_cep").blur(function() {
 
-            //Nova variável "cep" somente com dígitos.
-            var nu_cep = valor;
-//                .replace(/\D/g, '');
-            //Verifica se campo cep possui valor informado.
-            if (nu_cep != "") {
+                //Nova variável "cep" somente com dígitos.
+                var nu_cep = $(this).val().replace(/\D/g, '');
 
-                //Expressão regular para validar o CEP.
-                var validacep = /^[0-9]{8}$/;
+                //Verifica se campo cep possui valor informado.
+                if (nu_cep != "") {
 
-                //Valida o formato do CEP.
-                if (validacep.test(nu_cep)) {
+                    //Expressão regular para validar o CEP.
+                    var validacep = /^[0-9]{8}$/;
 
-                    //Preenche os campos com "..." enquanto consulta webservice.
-                    document.getElementById('tx_endereco').value = "...";
-                    document.getElementById('tx_bairro').value = "...";
-                    document.getElementById('tx_cidade').value = "...";
-                    document.getElementById('tx_uf').value = "...";
+                    //Valida o formato do CEP.
+                    if(validacep.test(nu_cep)) {
 
-                    //Cria um elemento javascript.
-                    var script = document.createElement('script');
+                        //Preenche os campos com "..." enquanto consulta webservice.
+                        $("#tx_endereco").val("...");
+                        $("#tx_bairro").val("...");
+                        $("#tx_cidade").val("...");
+                        $("#tx_uf").val("...");
+                        //    $("#ibge").val("...");
 
-                    //Sincroniza com o callback.
-                    script.src = '//viacep.com.br/ws/' + nu_cep + '/json/?callback=meu_callback';
-                    //Insere script no documento e carrega o conteúdo.
-                    document.body.appendChild(script);
+                        //Consulta o webservice viacep.com.br/
+                        $.getJSON("//viacep.com.br/ws/"+ nu_cep +"/json/?callback=?", function(dados) {
 
+                            if (!("erro" in dados)) {
+                                //Atualiza os campos com os valores da consulta.
+                                $("#tx_endereco").val(dados.logradouro);
+                                $("#tx_bairro").val(dados.bairro);
+                                $("#tx_cidade").val(dados.localidade);
+                                $("#tx_uf").val(dados.uf);
+                                //      $("#ibge").val(dados.ibge);
+                            } //end if.
+                            else {
+                                //CEP pesquisado não foi encontrado.
+                                limpa_formulário_cep();
+                                alert("CEP não encontrado.");
+                            }
+                        });
+                    } //end if.
+                    else {
+                        //cep é inválido.
+                        limpa_formulário_cep();
+                        alert("Formato de CEP inválido.");
+                    }
                 } //end if.
                 else {
-                    //cep é inválido.
+                    //cep sem valor, limpa formulário.
                     limpa_formulário_cep();
-                    alert("Formato de CEP inválido.");
                 }
-            } //end if.
-            else {
-                //cep sem valor, limpa formulário.
-                limpa_formulário_cep();
-            }
-        };
+            });
+        });
+
 
     </script>
 
@@ -433,9 +434,9 @@
                             <label for="tx_cidade">Cidade:</label>
                         </div>
                         <div class="input-field col s3">
-                            <input type="text" placeholder="" id="uf" name="tx_uf" required
+                            <input type="text" placeholder="" id="tx_uf" name="tx_uf" required
                                    class="validate"/>
-                            <label for="uf">UF:</label>
+                            <label for="tx_uf">UF:</label>
                         </div>
 
                         <div class="input col s6" align="left">

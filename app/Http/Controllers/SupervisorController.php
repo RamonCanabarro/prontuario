@@ -13,18 +13,42 @@ class SupervisorController extends Controller
 
         return view('supervisor.index', compact('dados'));
     }
-    public function form()
+
+    public function form($id)
     {
-        return view('supervisor.form');
+        if (!$id) {
+            return view('supervisor.form');
+        } else {
+            $dados = Supervisor::where('id_supervisor', $id)->get();
+            $dados = $dados[0];
+//           echo '<pre>';
+//           print_r($dados[0]);
+//           die;
+            return view('supervisor.form', compact('dados'));
+        }
     }
+
     public function salvar(FuncionarioRequest $dados)
     {
-        Supervisor::create($dados->all());
-        return redirect(route('supervisor.index'));
+//        echo '<pre>';
+//        print_r($dados['id_supervisor']);
+//        die;
+        if (!$dados['id_supervisor'])
+        {
+            Supervisor::create($dados->all());
+            return redirect(route('supervisor.index'));
+            }
+        else
+        {
+            Supervisor::where('id_supervisor', $dados['id_supervisor'])->update($dados->all());
+            return redirect(route('supervisor.index'));
+        }
+
     }
+
     public function deletar($dados)
     {
-        Supervisor::where('id_supervisor',$dados)->delete();
+        Supervisor::where('id_supervisor', $dados)->delete();
         return redirect(route('supervisor.index'));
     }
 }

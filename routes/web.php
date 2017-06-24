@@ -39,5 +39,6 @@ Route::group(['prefix' => 'paciente'], function () {
     Route::get('/', ['uses' => 'SupervisorController@index', 'as' => 'supervisor.index']);
     Route::get('/form', ['uses' => 'SupervisorController@form', 'as' => 'supervisor.form']);
     Route::post('/salvar', ['uses' => 'SupervisorController@salvar', 'as' => 'supervisor.salvar']);
+    Route::get('/alterar/{id}',['uses' => 'SupervisorController@form', 'as' => 'supervisor.alterar']);
     Route::get('/deletar/{id}', ['uses' => 'SupervisorController@deletar', 'as' => 'supervisor.deletar']);
 });

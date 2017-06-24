@@ -326,7 +326,11 @@
                                     for="nao2" value="n">Não.</label>
                             <label for="tp_acompanhamento_psic" class="active">Você é usuário de drogas?</label>
                         </div>
-
+                        <div class="input-field col s10" align="left">
+                            <label for='observacao' class="active">Observação:</label>
+                            <input type="text" class="validate" name="observacao" id="observacao"
+                                   required>
+                        </div>
                         {{--Tipos de drogas--}}
                         {{--<div class="input-field col s4">--}}
                         {{--<input type="checkbox" id="cigarro" name="tp_drogas"><label--}}
@@ -342,11 +346,7 @@
                         {{--<label for="tp_drogas" class="active">Se sim qual(is):</label>--}}
                         {{--</div><!-- quarta row !-->--}}
 
-                        <div class="input-field col s4" align="left">
-                            <label for='observacao' class="active">Observação:</label>
-                            <input type="text" class="validate" name="observacao" id="observacao"
-                                      required>
-                        </div>
+
                         <input type="submit" value="Salvar" id="salvar" name="salvar" class="btn btn-success">
                         <a href="{{route('triagem.index')}}" class="btn red">Cancelar</a>
                     </form>
