@@ -22,7 +22,7 @@
 						@foreach($dados as $dado)
 							<tr>
 								<td>
-									<a class="waves-effect waves-light" href="aluno/alterar"><i
+									<a class="waves-effect waves-light" href="aluno/alterar/{{$dado['id_aluno']}}"><i
 												class="material-icons left">mode_edit</i></a>
 
 									<a href="aluno/deletar/{{$dado['id_aluno']}}"><i

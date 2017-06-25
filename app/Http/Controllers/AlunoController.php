@@ -11,20 +11,35 @@ class AlunoController extends Controller
     {
         $dados = Aluno::all();
 
-        return view('aluno.list', compact('dados'));
+        return view('aluno.index', compact('dados'));
     }
-    public function form()
+
+    public function form($id)
     {
+        if (!$id) {
             return view('aluno.form');
+        } else {
+            $dados = Aluno::where('id_aluno', $id)->get();
+            $dados = $dados[0];
+//            print_r($dados);
+//            die;
+            return view('aluno.form', compact('dados'));
+        }
     }
+
     public function salvar(AlunoRequest $dados)
     {
+        if ($dados['id_aluno']) {
+            Aluno::find($dados['id_aluno'])->update($dados->all());
+            return redirect(route('aluno.index'));
+        } else {
             Aluno::create($dados->all());
-            return redirect(route('aluno.list'));
+            return redirect(route('aluno.index'));
+        }
     }
     public function deletar($dados)
     {
-        Aluno::where('id_aluno',$dados)->delete();
-        return redirect(route('aluno.list'));
+        Aluno::where('id_aluno', $dados)->delete();
+        return redirect(route('aluno.index'));
     }
 }
