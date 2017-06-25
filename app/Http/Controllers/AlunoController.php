@@ -14,17 +14,18 @@ class AlunoController extends Controller
         return view('aluno.index', compact('dados'));
     }
 
-    public function form($id)
+    public function incluir()
     {
-        if (!$id) {
-            return view('aluno.form');
-        } else {
-            $dados = Aluno::where('id_aluno', $id)->get();
-            $dados = $dados[0];
+        return view('aluno.form');
+
+    }
+    public function alterar($id)
+    {
+        $dados = Aluno::where('id_aluno', $id)->get();
+        $dados = $dados[0];
 //            print_r($dados);
 //            die;
-            return view('aluno.form', compact('dados'));
-        }
+        return view('aluno.form', compact('dados'));
     }
 
     public function salvar(AlunoRequest $dados)
@@ -37,6 +38,7 @@ class AlunoController extends Controller
             return redirect(route('aluno.index'));
         }
     }
+
     public function deletar($dados)
     {
         Aluno::where('id_aluno', $dados)->delete();

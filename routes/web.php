@@ -16,8 +16,8 @@ Route::get('/', function () {
 });
 Route::group(['prefix' => 'aluno'], function () {
     Route::get('/', ['uses' => 'AlunoController@index', 'as' => 'aluno.index']);
-    Route::get('/form', ['uses' => 'AlunoController@form', 'as' => 'aluno.form']);
-    Route::put('/alterar/{id}', ['uses' => 'AlunoController@form', 'as' => 'aluno.alterar']);
+    Route::get('/incluir', ['uses' => 'AlunoController@incluir', 'as' => 'aluno.incluir']);
+    Route::get('/alterar/{id}', ['uses' => 'AlunoController@alterar', 'as' => 'aluno.alterar']);
     Route::post('/salvar', ['uses' => 'AlunoController@salvar', 'as' => 'aluno.salvar']);
     Route::get('/deletar/{id}', ['uses' => 'AlunoController@deletar', 'as' => 'aluno.deletar']);
 });

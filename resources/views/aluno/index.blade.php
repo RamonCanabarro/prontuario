@@ -15,7 +15,8 @@
 							<th>Ação</th>
 							<th>Codigo</th>
 							<th>Nome</th>
-							<th>Telefone</th>
+							<th>Fixo</th>
+							<th>Celular</th>
 						</tr>
 						</thead>
 						<tbody>
@@ -31,13 +32,14 @@
 								<td>{{$dado['nu_codigo']}}</td>
 								<td>{{$dado['tx_nome']}}</td>
 								<td>{{$dado['nu_fone']}}</td>
+								<td>{{$dado['nu_fone2']}}</td>
 							</tr>
 						@endforeach
 						</tbody>
 					</table>
 				</div>
 				<div class="right-align">
-					<a class="btn-floating btn-large waves-effect waves-light" href="{{route('aluno.form')}}"><i
+					<a class="btn-floating btn-large waves-effect waves-light" href="{{route('aluno.incluir')}}"><i
 								class="material-icons">add</i></a>
 				</div>
 			</div>
