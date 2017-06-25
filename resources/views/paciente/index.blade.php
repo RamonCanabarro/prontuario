@@ -45,7 +45,7 @@
                                 @foreach($dados as $dado)
 
                                     <tr>
-                                        <td><a class="waves-effect waves-light" href="paciente/alterar"><i
+                                        <td><a class="waves-effect waves-light" href="paciente/alterar/{{$dados['id_paciente']}}"><i
                                                         class="material-icons left">mode_edit</i></a>
 
                                             <a href="paciente/deletar/{{$dado['id_paciente']}}"><i

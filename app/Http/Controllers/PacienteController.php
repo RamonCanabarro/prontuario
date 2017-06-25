@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Paciente;
-use Illuminate\Http\Request;
+use App\Http\Requests\PacienteRequest;
 
 class PacienteController extends Controller
 {
@@ -30,9 +30,13 @@ class PacienteController extends Controller
         Paciente::where('id_paciente', $dados)->delete();
         return redirect(route('paciente.index'));
     }
-    public function alterar($dados)
+    public function alterar(PacienteRequest $dados)
     {
-        Paciente::insert('id_paciente', $dados)->updated();
-        return redirect(route('paciente.form'));
+        $dados = Paciente::where('id_paciente', $dados)->get();
+        $dados = $dados[0];
+//            print_r($dados);
+//            die;
+        return view('aluno.form', compact('dados'));
     }
+
 }

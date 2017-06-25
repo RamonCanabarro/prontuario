@@ -19,7 +19,7 @@ class SupervisorController extends Controller
         if (!$id) {
             return view('supervisor.form');
         } else {
-            $dados = Supervisor::where('id_supervisor', $id)->get();
+            $dados = Supervisor::where('id_aluno', $id)->get();
             $dados = $dados[0];
 //           echo '<pre>';
 //           print_r($dados[0]);
@@ -33,14 +33,14 @@ class SupervisorController extends Controller
 //        echo '<pre>';
 //        print_r($dados['id_supervisor']);
 //        die;
-        if (!$dados['id_supervisor'])
+        if ($dados['id_supervisor'])
         {
-            Supervisor::create($dados->all());
+            Supervisor::find($dados['id_aluno'])->update($dados->all());
             return redirect(route('supervisor.index'));
             }
         else
         {
-            Supervisor::where('id_supervisor', $dados['id_supervisor'])->update($dados->all());
+            Supervisor::create($dados->all());
             return redirect(route('supervisor.index'));
         }
 
