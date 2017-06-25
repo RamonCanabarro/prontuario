@@ -102,8 +102,8 @@
 								<label for="tx_endereco">Endereço</label>
 							</div>
 							<div class="input-field col s2">
-								<input type="text" id="tx_numero" name="tx_numero" class="validate" required
-								       value="{{$dados['tx_numero'] or null}}">
+								<input type="text" id="nu_numero" name="nu_numero" class="validate" required
+								       value="{{$dados['nu_numero'] or null}}">
 								<label for="tx_endereco">Nº</label>
 							</div>
 							<div class="input-field col s3">
