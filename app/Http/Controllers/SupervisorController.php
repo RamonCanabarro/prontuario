@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\FuncionarioRequest;
+use App\Paciente;
 use App\Supervisor;
 
 class SupervisorController extends Controller
@@ -14,37 +15,32 @@ class SupervisorController extends Controller
         return view('supervisor.index', compact('dados'));
     }
 
-    public function form($id)
+    public function form()
     {
-        if (!$id) {
-            return view('supervisor.form');
-        } else {
-            $dados = Supervisor::where('id_aluno', $id)->get();
-            $dados = $dados[0];
-//           echo '<pre>';
-//           print_r($dados[0]);
-//           die;
-            return view('supervisor.form', compact('dados'));
+           return view('supervisor.form');
         }
-    }
+        public function alterar($id)
+{
+    $dados = Supervisor::where('id_supervisor', $id)->get();
+    $dados = $dados[0];
+//            print_r($dados);
+//            die;
+    return view('supervisor.form', compact('dados'));
+}
+
 
     public function salvar(FuncionarioRequest $dados)
     {
-//        echo '<pre>';
-//        print_r($dados['id_supervisor']);
-//        die;
-        if ($dados['id_supervisor'])
-        {
-            Supervisor::find($dados['id_aluno'])->update($dados->all());
+        if ($dados['id_supervisor']) {
+            Supervisor::find($dados['id_supervisor'])->update($dados->all());
             return redirect(route('supervisor.index'));
-            }
-        else
-        {
+        } else {
             Supervisor::create($dados->all());
             return redirect(route('supervisor.index'));
         }
-
+    
     }
+
 
     public function deletar($dados)
     {

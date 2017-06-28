@@ -21,22 +21,28 @@ class PacienteController extends Controller
 
     public function salvar(PacienteRequest $dados)
     {
-        Paciente::create($dados->all());
-        return redirect(route('paciente.index'));
+        if ($dados['id_paciente']) {
+            Paciente::find($dados['id_paciente'])->update($dados->all());
+            return redirect(route('paciente.index'));
+        } else {
+            Paciente::create($dados->all());
+            return redirect(route('paciente.index'));
+        }
+    }
+
+    public function alterar($id)
+    {
+        $dados = Paciente::where('id_paciente', $id)->get();
+        $dados = $dados[0];
+//            print_r($dados);
+//            die;
+        return view('paciente.form', compact('dados'));
     }
 
     public function deletar($dados)
     {
         Paciente::where('id_paciente', $dados)->delete();
         return redirect(route('paciente.index'));
-    }
-    public function alterar(PacienteRequest $dados)
-    {
-        $dados = Paciente::where('id_paciente', $dados)->get();
-        $dados = $dados[0];
-//            print_r($dados);
-//            die;
-        return view('aluno.form', compact('dados'));
     }
 
 }

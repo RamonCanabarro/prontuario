@@ -45,11 +45,11 @@
                                 @foreach($dados as $dado)
 
                                     <tr>
-                                        <td><a class="waves-effect waves-light" href="paciente/alterar/{{$dados['id_paciente']}}"><i
+                                        <td><a class="waves-effect waves-light" href="paciente/alterar/{{$dado['id_paciente']}}"><i
                                                         class="material-icons left">mode_edit</i></a>
 
                                             <a href="paciente/deletar/{{$dado['id_paciente']}}"><i
-                                                        class="material-icons left red-text">delete</i></a>
+                                                        class="material-icons left red-text" onclick="EventAlert()">delete</i></a>
 
                                         </td>
                                         <td>{{$dado['id_paciente']}}</td>
@@ -98,4 +98,26 @@
             </div>
         </div>
     </div>
+    <script>
+    function EventAlert(){
+    swal({
+    title: "Deseja deletar?",
+    text: "Não podera recuperar esse arquivo novamente!",
+    type: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#DD6B55",
+    confirmButtonText: "Sim, apagar!",
+    cancelButtonText: "Não, cancele por favor!",
+    closeOnConfirm: false,
+    closeOnCancel: false
+    },
+    function(isConfirm){
+    if (isConfirm) {
+    swal("Deletado!", "Supervisor deletado.", "success");
+    } else {
+    swal("Cancelled", "Cancelado :)", "error");
+    }
+    });
+    }
+    </script>
 @endsection

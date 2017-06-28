@@ -26,7 +26,7 @@ Route::group(['prefix' => 'paciente'], function () {
     Route::get('/', ['uses' => 'PacienteController@index', 'as' => 'paciente.index']);
     Route::get('/form', ['uses' => 'PacienteController@form', 'as' => 'paciente.form']);
     Route::post('/salvar', ['uses' => 'PacienteController@salvar', 'as' => 'paciente.salvar']);
-    Route::post('/alterar/{id}',['uses' => 'PacienteController@alterar', 'as' => 'paciente.alterar']);
+    Route::get('/alterar/{id}',['uses' => 'PacienteController@alterar', 'as' => 'paciente.alterar']);
     Route::get('/deletar/{id}', ['uses' => 'PacienteController@deletar', 'as' => 'paciente.deletar']);
 });
 
@@ -40,6 +40,6 @@ Route::group(['prefix' => 'paciente'], function () {
     Route::get('/', ['uses' => 'SupervisorController@index', 'as' => 'supervisor.index']);
     Route::get('/form', ['uses' => 'SupervisorController@form', 'as' => 'supervisor.form']);
     Route::post('/salvar', ['uses' => 'SupervisorController@salvar', 'as' => 'supervisor.salvar']);
-    Route::put('/alterar/{id}',['uses' => 'SupervisorController@form', 'as' => 'supervisor.alterar']);
+    Route::get('/alterar/{id}',['uses' => 'SupervisorController@alterar', 'as' => 'supervisor.alterar']);
     Route::get('/deletar/{id}', ['uses' => 'SupervisorController@deletar', 'as' => 'supervisor.deletar']);
 });
