@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Triagem extends Model
 {
     protected $table = 'tb_triagem';
-    public $timestamps = true;
+    public $timestamps = false;
     protected $primaryKey = 'id_triagem';
     protected $fillable = ['id_triagem', 'fk_paciente', 'fk_aluno', 'fk_supervisor', 'tp_grupo', 'tx_queixa', 'tx_observacao',
         'tp_necessidade_atendi', 'tp_visto_supervisor', 'tp_recusa', 'tx_motivo_recusa', 'dt_recusa',

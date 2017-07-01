@@ -22,11 +22,11 @@
                         @foreach($dados as $dado)
                             <tr>
                                 <td>
+
                                     <a class="waves-effect waves-light" href="supervisor/alterar/{{$dado['id_supervisor']}}"><i
                                                 class="material-icons left">mode_edit</i></a>
-
                                     <a href="supervisor/deletar/{{$dado['id_supervisor']}}"><i
-                                                class="material-icons left red-text" onclick="EventAlert()">delete</i></a>
+                                                class="material-icons left red-text" onclick="return confirm('Tem certeza que deseja deletar?')">delete</i></a>
                                 </td>
                                 <td>{{$dado['nu_codigo']}}</td>
                                 <td>{{$dado['tx_nome']}}</td>

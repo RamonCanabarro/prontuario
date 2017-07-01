@@ -22,11 +22,11 @@
                             <b>Necessidade atendimento:</b>
                             <p>
                                 <input type="radio" id="normal" value="{{$dados['tp_necessidade_atendimento'] or null}}"
-                                       name="tp_necessidade_atendimento" class=""><label
+                                       name="tp_necessidade_atendimento" class="with-gap"><label
                                         for="normal" value="N">Normal</label>
                                 <input type="radio" id="urgente"
                                        value="{{$dados['tp_necessidade_atendimento'] or null}}"
-                                       name="tp_necessidade_atendimento" class=""><label
+                                       name="tp_necessidade_atendimento" class="with-gap"><label
                                         for="urgente" value="U">Urgente</label>
                             </p>
                         </div>
@@ -53,20 +53,20 @@
                             <label for="activate"><b>Tipos de atendimento</b></label>
                             <p>
                                 <input type="radio" name="tp_grupo" value="{{$dados['tp_grupo'] or null}}" id="Crianca"
-                                       value="Crianca">
+                                       value="Crianca" class="with-gap">
                                 <label class="active" for="Crianca">Criança</label>
 
                                 <input type="radio" name="tp_grupo" value="{{$dados['tp_grupo'] or null}}"
                                        id="Adolescente"
-                                       value="Adolescente">
+                                       value="Adolescente" class="with-gap">
                                 <label class="active" for="Adolescente">Adolescente</label>
 
                                 <input type="radio" name="tp_grupo" value="{{$dados['tp_grupo'] or null}}" id="Adulto"
-                                       value="Adulto" checked="checked">
+                                       value="Adulto" class="with-gap">
                                 <label class="active" for="Adulto">Adulto</label>
 
                                 <input type="radio" name="tp_grupo" value="{{$dados['tp_grupo'] or null}}" id="Idoso"
-                                       value="Idoso">
+                                       value="Idoso" class="with-gap">
                                 <label class="active" for="Idoso">Idoso</label>
                             </p>
                         </div>
@@ -79,9 +79,9 @@
                         </div>
                         <div class="input-field col s6">
                             <label for="tp_recusa" class="active">Recusa:</label>
-                            <input type="radio" id="caso" class="validate" value="C" name="tp_recusa">
+                            <input type="radio" id="caso" class="with-gap" value="C" name="tp_recusa">
                             <label for="caso">Caso encerrado.</label>
-                            <input type="radio" id="encaminhamento" class="validate" value="E" name="tp_recusa">
+                            <input type="radio" id="encaminhamento" class="with-gap" value="E" name="tp_recusa">
                             <label for="encaminhamento">Encaminhamento externo.</label>
                         </div>
                         <div class="input-field col s3">
@@ -99,8 +99,10 @@
                                 <label for="familiar" class="active">Alguem em sua residência estuda
                                     em escola ou faculdade
                                     partiular? </label>
-                                <input type="radio" id="sim" name="tp_familia"><label for="sim">Sim.</label>
-                                <input type="radio" id="nao" name="tp_familia"><label for="nao">Não.</label>
+                                <input type="radio" id="sim" name="tp_familia" class="with-gap"><label
+                                        for="sim">Sim.</label>
+                                <input type="radio" id="nao" name="tp_familia" class="with-gap"><label
+                                        for="nao">Não.</label>
                             </div>
                         </div>
 
@@ -123,9 +125,9 @@
                         </div>
 
                         <div class="input-field col s4">
-                            <input type="radio" id="tp_deficiencia_sim" class="validate"
+                            <input type="radio" id="tp_deficiencia_sim" class="with-gap"
                                    name="tp_deficiencia" value="S"><label for="tp_deficiencia_sim">Sim.</label>
-                            <input type="radio" id="tp_deficiencia_nao" class="validate"
+                            <input type="radio" id="tp_deficiencia_nao" class="with-gap"
                                    name="tp_deficiencia" value="N"><label for="tp_deficiencia_nao">Não.</label>
                             <label for="tp_deficiencia" class="active">Alguem de sua família tem
                                 alguma doença mental ou
@@ -139,9 +141,9 @@
 
 
                         <div class="input-field col s4">
-                            <input type="radio" id="sim3" name="tp_acompanhamento_psic"><label
+                            <input type="radio" id="sim3" name="tp_acompanhamento_psic" class="with-gap"><label
                                     for="sim3">Sim.</label>
-                            <input type="radio" id="nao3" name="tp_acompanhamento_psic"><label
+                            <input type="radio" id="nao3" name="tp_acompanhamento_psic" class="with-gap"><label
                                     for="nao3">Não.</label>
                             <label for="tp_acompanhamento_psic" class="active">Você ou alguem da
                                 família faz acompanhamento psiquiátrico?</label>
@@ -152,32 +154,26 @@
                             <label class="active" for="tx_local_acompanhamento">Local do acompanhamento</label>
                         </div>
                         <div class="input-field col s4">
-                            <input type="radio" id="sim2" name="tp_drogas"><label
+                            <input type="text" class="validate" id="fk_gastos_saude"
+                                   name="fk_gastos_saude">
+                            <label class="active" for="fk_gastos_saude">Mensalidade do local.</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input type="radio" id="sim2" name="tp_drogas" class="with-gap"><label
                                     for="sim2" value="s">Sim.</label>
-                            <input type="radio" id="nao2" name="tp_drogas"><label
+                            <input type="radio" id="nao2" name="tp_drogas" class="with-gap"><label
                                     for="nao2" value="n">Não.</label>
                             <label for="tp_acompanhamento_psic" class="active">Você é usuário de drogas?</label>
                         </div>
-                        <div class="input-field col s10" align="left">
+                        <div class="input-field col s4">
+                            <input type="text" id="tx_drogas" name="tx_drogas">
+                            <label for="tx_drogas">Quais drogas você usa?</label>
+                        </div>
+                        <div class="input-field col s4" align="left">
                             <label for='observacao' class="active">Observação:</label>
                             <input type="text" class="validate" name="observacao" id="observacao"
                                    required>
                         </div>
-                        {{--Tipos de drogas--}}
-                        {{--<div class="input-field col s4">--}}
-                        {{--<input type="checkbox" id="cigarro" name="tp_drogas"><label--}}
-                        {{--for="cigarro" value="C">Cigarro.</label>--}}
-                        {{--<input type="checkbox" id="alcool" name="tp_drogas"><label--}}
-                        {{--for="alcool" value="A">Álcool.</label>--}}
-                        {{--<input type="checkbox" id="crack" name="tp_drogas"><label--}}
-                        {{--for="crack" value="c">Crack.</label>--}}
-                        {{--<input type="checkbox" id="maconha" name="tp_drogas"><label--}}
-                        {{--for="maconha" value="M">Maconha.</label>--}}
-                        {{--<input type="checkbox" id="cocaina" name="tp_drogas"><label--}}
-                        {{--for="cocaina">Cocaina.</label>--}}
-                        {{--<label for="tp_drogas" class="active">Se sim qual(is):</label>--}}
-                        {{--</div><!-- quarta row !-->--}}
-
 
                         <input type="submit" value="Salvar" id="salvar" name="salvar" class="btn btn-success">
                         <a href="{{route('triagem.index')}}" class="btn red">Cancelar</a>

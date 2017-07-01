@@ -139,9 +139,5 @@
             </div>
         </div>
     </div>
-    <script>
-        function EventAlert(){
-            swal("Cadastro efetuado com sucesso!")
-        }
-    </script>
+
 @endsection

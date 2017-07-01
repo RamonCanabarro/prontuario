@@ -49,7 +49,7 @@
                                                         class="material-icons left">mode_edit</i></a>
 
                                             <a href="paciente/deletar/{{$dado['id_paciente']}}"><i
-                                                        class="material-icons left red-text" onclick="EventAlert()">delete</i></a>
+                                                        class="material-icons left red-text" onclick="return confirm('Tem certeza que deseja deletar?')">delete</i></a>
 
                                         </td>
                                         <td>{{$dado['id_paciente']}}</td>

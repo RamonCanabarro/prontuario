@@ -83,7 +83,8 @@
                     <form method="post" action={{route('paciente.salvar')}}>
                         {{ csrf_field() }}
                         <div id="oculto">
-                            <input type="number" name="id_supervisor" id="id_supervisor" value="{{$dados['id_supervisor'] or null}}" hidden>
+                            <input type="number" name="id_supervisor" id="id_supervisor"
+                                   value="{{$dados['id_supervisor'] or null}}" hidden>
                         </div>
 
                         <div class="input-field col s3">
@@ -195,83 +196,87 @@
 
                         <div class="input col s6" align="left">
                             <b>Tipos de atendimento</b>
-                            <input type="radio" name="tp_atendimento" value="{{$dados['tp_atendimento'] or null}}"
-                                   id="C" value="C">
+                            <input type="radio" name="tp_atendimento" value="{{$dados['tp_atendimento'] or 'C'}}"
+                                   id="C" class="with-gap">
                             <label class="" for="C">Criança</label>
 
-                            <input type="radio" name="tp_atendimento" value="{{$dados['tp_atendimento'] or null}}"
-                                   id="D" value="D">
+                            <input type="radio" name="tp_atendimento" value="{{$dados['tp_atendimento'] or 'D'}}"
+                                   id="D" class="with-gap">
                             <label class="" for="D">Adolescente</label>
 
-                            <input type="radio" name="tp_atendimento" value="{{$dados['tp_atendimento'] or null}}"
-                                   id="A" value="A">
+                            <input type="radio" name="tp_atendimento" value="{{$dados['tp_atendimento'] or 'D'}}"
+                                   id="A" class="with-gap">
                             <label class="" for="A">Adulto</label>
 
-                            <input type="radio" name="tp_atendimento" value="{{$dados['tp_atendimento'] or null}}"
-                                   id="I" value="I">
+                            <input type="radio" name="tp_atendimento" value="{{$dados['tp_atendimento'] or 'I'}}"
+                                   id="I" class="with-gap">
                             <label class="" for="I">Idoso</label>
 
                         </div>
                         <p>
                             <b>Orientação sexual:</b>
                             <input type="radio" id="homossexual" class="with-gap"
-                                   value="{{$dados['tp_orientacao_sexual'] or null}}" name="tp_orientacao_sexual"
-                                   value="H"><label
+                                   value="{{$dados['tp_orientacao_sexual'] or 'H'}}" name="tp_orientacao_sexual"><label
                                     class=""
                                     for="homossexual">Homossexual</label>
-                            <input type="radio" id="heterossexual" value="{{$dados['tp_orientacao_sexual'] or null}}"
+                            <input type="radio" id="heterossexual" class="with-gap"
+                                   value="{{$dados['tp_orientacao_sexual'] or 'T'}}"
                                    class="with-gap"
-                                   name="tp_orientacao_sexual" value="T"><label
+                                   name="tp_orientacao_sexual"><label
                                     class=""
                                     for="heterossexual">Heterossexual</label>
                             <input type="radio" id="assexual" class="with-gap" name="tp_orientacao_sexual"
-                                   value="{{$dados['tp_orientacao_sexual'] or null}}" value="A"><label
-                                    class=""
+                                   value="{{$dados['tp_orientacao_sexual'] or 'A'}}"><label
                                     for="assexual">Assexual</label>
 
                             <input type="radio" id="bissexual" class="with-gap"
-                                   value="{{$dados['tp_orientacao_sexual'] or null}}" name="tp_orientacao_sexual"
-                                   value="B"><label
-                                    class=""
+                                   class="with-gap" value="{{$dados['tp_orientacao_sexual'] or 'B'}}"
+                                   name="tp_orientacao_sexual">
+                            <label
                                     for="bissexual">Bissexual</label>
                         </p>
 
                         <p>
                             <b>Sexo</b>
-                            <input type="radio" id="masculino" name="tx_sexo" value="{{$dados['tx_sexo'] or null}}"
-                                   class="with-grap" value="M"><label
+                            <input type="radio" class="with-gap" id="masculino" name="tx_sexo"
+                                   value="{{$dados['tx_sexo'] or 'M'}}"
+                            ><label
                                     for="masculino">Masculino</label>
-                            <input type="radio" id="feminino" name="tx_sexo" value="{{$dados['tx_sexo'] or null}}"
-                                   class="with-grap" value="F"><label
+                            <input type="radio" class="with-gap" id="feminino" name="tx_sexo"
+                                   value="{{$dados['tx_sexo'] or 'F'}}">
+                            <label
                                     for="feminino">Feminino</label>
                         </p>
 
                         <p>
                             <b>Raça:</b>
-                            <input type="radio" id="negro" name="tx_raca" value="{{$dados['tx_raca'] or null}}"
-                                   class="with-grap" value="N"><label
+                            <input type="radio" id="negro" class="with-gap" name="tx_raca"
+                                   value="{{$dados['tx_raca'] or 'N'}}"
+                            ><label
                                     for="negro">Negro</label>
-                            <input type="radio" id="Branco" name="tx_raca" value="{{$dados['tx_raca'] or null}}"
-                                   class="with-grap" value="B"><label
+                            <input type="radio" id="Branco" class="with-gap" name="tx_raca"
+                                   value="{{$dados['tx_raca'] or 'B'}}">
+                            <label
                                     for="Branco">Branco</label>
-                            <input type="radio" id="Pardo" name="tx_raca" value="{{$dados['tx_raca'] or null}}"
-                                   class="with-grap" value="P"><label
-                                    for="Pardo">Pardo</label>
-                            <input type="radio" id="indigena" name="tx_raca" value="{{$dados['tx_raca'] or null}}"
-                                   class="with-grap" value="I"><label
+                            <input type="radio" id="Pardo" class="with-gap" name="tx_raca"
+                                   value="{{$dados['tx_raca'] or 'P'}}">
+                            <label for="Pardo">Pardo</label>
+                            <input type="radio" id="indigena" class="with-gap" name="tx_raca"
+                                   value="{{$dados['tx_raca'] or 'I'}}">
+                            <label
                                     for="indigena">Indígena</label>
                         </p>
 
                         <p>
                             <b>Estado Civil</b>
                             <input type="radio" id="solteiro" name="tx_estado_civil"
-                                   value="{{$dados['tx_estado_civil'] or null}}" value="S" class="with-gap"><label
-                                    for="solteiro">Solteiro</label>
+                                   value="{{$dados['tx_estado_civil'] or 'S'}}" class="with-gap"
+                            ><label for="solteiro">Solteiro</label>
                             <input type="radio" id="casado" name="tx_estado_civil"
-                                   value="{{$dados['tx_estado_civil'] or null}}" class="with-gap" value="C"><label
+                                   value="{{$dados['tx_estado_civil'] or 'C'}}" class="with-gap"><label
                                     for="casado">Casado(a)</label>
                             <input type="radio" id="divorciado" name="tx_estado_civil"
-                                   value="{{$dados['tx_estado_civil'] or null}}" class="with-gap" value="D"><label
+                                   value="{{$dados['tx_estado_civil'] or 'D'}}" class="with-gap"><label
                                     for="divorciado">Divorciado(a)</label>
                         </p>
 
@@ -288,7 +293,8 @@
                                    class="validate"/>
                             <label for="supervisor">Supervisor:</label>
                         </div>
-                        <input type="submit" value="Salvar" id="salvar" name="salvar" onclick="" class="btn btn-success">
+                        <input type="submit" value="Salvar" id="salvar" name="salvar" onclick=""
+                               class="btn btn-success">
                         <a href="{{route('paciente.index')}}" class="btn red">Cancelar</a>
 
                     </form>
@@ -298,7 +304,7 @@
         </div>
     </div>
     <script>
-        function EventAlert(){
+        function EventAlert() {
             swal("Cadastro efetuado com sucesso!", "success")
         }
     </script>

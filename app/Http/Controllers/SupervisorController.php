@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\FuncionarioRequest;
-use App\Paciente;
+use App\Http\Requests\SupervisorRequest;
 use App\Supervisor;
 
 class SupervisorController extends Controller
@@ -29,7 +28,7 @@ class SupervisorController extends Controller
 }
 
 
-    public function salvar(FuncionarioRequest $dados)
+    public function salvar(SupervisorRequest $dados)
     {
         if ($dados['id_supervisor']) {
             Supervisor::find($dados['id_supervisor'])->update($dados->all());
@@ -37,8 +36,9 @@ class SupervisorController extends Controller
         } else {
             Supervisor::create($dados->all());
             return redirect(route('supervisor.index'));
+
         }
-    
+
     }
 
 
@@ -48,3 +48,12 @@ class SupervisorController extends Controller
         return redirect(route('supervisor.index'));
     }
 }
+
+
+?>
+
+<script>
+    function EventAlert(){
+        swal("Cadastro efetuado com sucesso!")
+    }
+</script>
