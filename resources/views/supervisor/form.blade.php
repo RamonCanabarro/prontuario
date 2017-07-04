@@ -132,12 +132,14 @@
                                 <label for="nu_fone2">Celular</label>
                             </div>
                         </div>
-                        <input type="submit" value="Salvar" id="salvar" name="salvar" onclick="EventAlert()" class="btn btn-success">
+
+                            <input type="submit" value="Salvar" id="salvar" name="salvar" onclick="EventAlert()" class="btn btn-success">
                         <a href="{{route('supervisor.index')}}" class="btn red">Cancelar</a>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
 
 @endsection

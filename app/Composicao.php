@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class triagemComposicao extends Model
+class composicao extends Model
 {
 
     protected $table = 'tb_triagem_composicao';

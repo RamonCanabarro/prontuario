@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class origemRenda extends Model
+class renda extends Model
 {
 
     protected $table = 'tb_origem_renda';

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class gastoSaude extends Model
+class gasto extends Model
 {
     protected $table = 'tb_gato_saude';
     public $timestamps = true;

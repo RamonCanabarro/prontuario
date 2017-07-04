@@ -194,47 +194,26 @@
                             <label for="tx_uf">UF:</label>
                         </div>
 
-                        <div class="input col s6" align="left">
-                            <b>Tipos de atendimento</b>
-                            <input type="radio" name="tp_atendimento" value="{{$dados['tp_atendimento'] or 'C'}}"
-                                   id="C" class="with-gap">
-                            <label class="" for="C">Criança</label>
-
-                            <input type="radio" name="tp_atendimento" value="{{$dados['tp_atendimento'] or 'D'}}"
-                                   id="D" class="with-gap">
-                            <label class="" for="D">Adolescente</label>
-
-                            <input type="radio" name="tp_atendimento" value="{{$dados['tp_atendimento'] or 'D'}}"
-                                   id="A" class="with-gap">
-                            <label class="" for="A">Adulto</label>
-
-                            <input type="radio" name="tp_atendimento" value="{{$dados['tp_atendimento'] or 'I'}}"
-                                   id="I" class="with-gap">
-                            <label class="" for="I">Idoso</label>
-
+                        <div class="input-field col s3">
+                            <select name="tp_atendimento">
+                                <option value="">selecione</option>
+                                <option value="{{$dados['tp_atendimento'] or 'C'}}">Criança</option>
+                                <option value="{{$dados['tp_atendimento'] or 'D'}}">Adolescente</option>
+                                <option value="{{$dados['tp_atendimento'] or 'A'}}">Adulto</option>
+                                <option value="{{$dados['tp_atendimento'] or 'I'}}">Idoso</option>
+                            </select>
+                            <label>Tipo de atendimento</label>
                         </div>
-                        <p>
-                            <b>Orientação sexual:</b>
-                            <input type="radio" id="homossexual" class="with-gap"
-                                   value="{{$dados['tp_orientacao_sexual'] or 'H'}}" name="tp_orientacao_sexual"><label
-                                    class=""
-                                    for="homossexual">Homossexual</label>
-                            <input type="radio" id="heterossexual" class="with-gap"
-                                   value="{{$dados['tp_orientacao_sexual'] or 'T'}}"
-                                   class="with-gap"
-                                   name="tp_orientacao_sexual"><label
-                                    class=""
-                                    for="heterossexual">Heterossexual</label>
-                            <input type="radio" id="assexual" class="with-gap" name="tp_orientacao_sexual"
-                                   value="{{$dados['tp_orientacao_sexual'] or 'A'}}"><label
-                                    for="assexual">Assexual</label>
-
-                            <input type="radio" id="bissexual" class="with-gap"
-                                   class="with-gap" value="{{$dados['tp_orientacao_sexual'] or 'B'}}"
-                                   name="tp_orientacao_sexual">
-                            <label
-                                    for="bissexual">Bissexual</label>
-                        </p>
+                        <div class="input-field col s3">
+                            <select name="tp_orientacao_sexual">
+                                <option value="">selecione</option>
+                                <option value="{{$dados['tp_orientacao_sexual'] or 'H'}}">Homossexual</option>
+                                <option value="{{$dados['tp_orientacao_sexual'] or 'T'}}">Heterossexual</option>
+                                <option value="{{$dados['tp_orientacao_sexual'] or 'A'}}">Assexual</option>
+                                <option value="{{$dados['tp_orientacao_sexual'] or 'B'}}">Bissexual</option>
+                            </select>
+                            <label>Orientação sexual</label>
+                        </div>
 
                         <p>
                             <b>Sexo</b>
@@ -248,52 +227,46 @@
                                     for="feminino">Feminino</label>
                         </p>
 
-                        <p>
-                            <b>Raça:</b>
-                            <input type="radio" id="negro" class="with-gap" name="tx_raca"
-                                   value="{{$dados['tx_raca'] or 'N'}}"
-                            ><label
-                                    for="negro">Negro</label>
-                            <input type="radio" id="Branco" class="with-gap" name="tx_raca"
-                                   value="{{$dados['tx_raca'] or 'B'}}">
-                            <label
-                                    for="Branco">Branco</label>
-                            <input type="radio" id="Pardo" class="with-gap" name="tx_raca"
-                                   value="{{$dados['tx_raca'] or 'P'}}">
-                            <label for="Pardo">Pardo</label>
-                            <input type="radio" id="indigena" class="with-gap" name="tx_raca"
-                                   value="{{$dados['tx_raca'] or 'I'}}">
-                            <label
-                                    for="indigena">Indígena</label>
-                        </p>
 
-                        <p>
-                            <b>Estado Civil</b>
-                            <input type="radio" id="solteiro" name="tx_estado_civil"
-                                   value="{{$dados['tx_estado_civil'] or 'S'}}" class="with-gap"
-                            ><label for="solteiro">Solteiro</label>
-                            <input type="radio" id="casado" name="tx_estado_civil"
-                                   value="{{$dados['tx_estado_civil'] or 'C'}}" class="with-gap"><label
-                                    for="casado">Casado(a)</label>
-                            <input type="radio" id="divorciado" name="tx_estado_civil"
-                                   value="{{$dados['tx_estado_civil'] or 'D'}}" class="with-gap"><label
-                                    for="divorciado">Divorciado(a)</label>
-                        </p>
+                        <div class="input-field col s3">
+                            <select name="tx_raca">
+                                <option value="">selecione</option>
+                                <option value="{{$dados['tx_raca'] or 'N'}}">Negro</option>
+                                <option value="{{$dados['tx_raca'] or 'B'}}">Branco</option>
+                                <option value="{{$dados['tx_raca'] or 'P'}}">Pardo(a)</option>
+                                <option value="{{$dados['tx_raca'] or 'I'}}">Indio</option>
+                            </select>
+                            <label>Raça</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <select name="tx_estado_civil">
+                                <option value="">selecione</option>
+                                <option value="{{$dados['tx_estado_civil'] or 'S'}}">Solteiro</option>
+                                <option value="{{$dados['tx_estado_civil'] or 'C'}}">Casado(a)</option>
+                                <option value="{{$dados['tx_estado_civil'] or 'D'}}">Divorciado(a)</option>
+                            </select>
+                            <label>Estado Civil</label>
+                        </div>
+                        <div class="input-field col s3">
 
-
-                        <div class="input-field col s6">
-                            <input type="text" id="aluno" value="{{$dados['fk_aluno'] or null}}" name="fk_aluno"
-                                   required
-                                   class="validate"/>
+                            <select name="fk_aluno">
+                                @foreach($dados2 as $dado)
+                                {{--<option value="" disabled selected>Selecione supervisor</option>--}}
+                                <option value="{{$dado['id_aluno']}}" >{{$dado['tx_nome']}}</option>
+                            @endforeach
+                            </select>
                             <label for="aluno">Aluno:</label>
                         </div>
-                        <div class="input-field col s6">
-                            <input type="text" id="supervisor" value="{{$dados['fk_supervisor'] or null}}"
-                                   name="fk_supervisor" required
-                                   class="validate"/>
+                        <div class="input-field col s3">
+                                <select name="fk_supervisor">
+                                    @foreach($dados as $dado)
+                                    {{--<option value="" disabled selected>Selecione supervisor</option>--}}
+                                    <option value="{{$dado['id_supervisor']}}" >{{$dado['tx_nome']}}</option>
+                                    @endforeach
+                                </select>
                             <label for="supervisor">Supervisor:</label>
                         </div>
-                        <input type="submit" value="Salvar" id="salvar" name="salvar" onclick=""
+                        <input type="submit" value="Salvar" id="salvar" align="center" name="salvar" onclick=""
                                class="btn btn-success">
                         <a href="{{route('paciente.index')}}" class="btn red">Cancelar</a>
 
@@ -307,5 +280,10 @@
         function EventAlert() {
             swal("Cadastro efetuado com sucesso!", "success")
         }
+
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+
     </script>
 @endsection
