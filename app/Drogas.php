@@ -4,18 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class drogas extends Model
+class Drogas extends Model
 {
-    protected $table = 'tb_triagem_drogas';
+    protected $table = 'tb_drogas';
     public $timestamps = true;
-    protected $primaryKey = 'fk_triagem';
-    protected $fillable = ['fk_triagem', 'fk_drogas'];
+    protected $primaryKey = 'id_drogas';
+    protected $fillable = ['id_drogas', 'tx_nome'];
 
     public function salvar($dados)
     {
         $dados = upperVar($dados);
-        if (!empty($dados['fk_triagem'])) {
-            return $this::where('fk_triagem', $dados['fk_triagem'])->update($dados);
+        if (!empty($dados['id_drogas'])) {
+            return $this::where('id_drogas', $dados['id_drogas'])->update($dados);
         }
         return $this::create($dados);
     }

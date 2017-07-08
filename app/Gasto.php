@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class gasto extends Model
 {
-    protected $table = 'tb_gato_saude';
+    protected $table = 'tb_gasto_saude';
     public $timestamps = true;
     protected $primaryKey = 'id_gasto_saude';
     protected $fillable = ['id_gasto_saude', 'tx_gasto_saude'];

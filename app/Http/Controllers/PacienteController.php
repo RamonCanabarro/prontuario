@@ -30,7 +30,7 @@ class PacienteController extends Controller
             Paciente::find($dados['id_paciente'])->update($dados->all());
             return redirect(route('paciente.index'));
         } else {
-            Paciente::create($dados->all());
+            Paci:ente:create($dados->all());
             return redirect(route('paciente.index'));
         }
     }
