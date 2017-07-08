@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Paciente;
 use App\Http\Requests\PacienteRequest;
+use App\Supervisor;
+use App\Aluno;
 
 class PacienteController extends Controller
 {
     public function form()
     {
-        return view('paciente.form');
+        $dados = Supervisor:: all();
+        $dados2 = Aluno:: all();
+        return view('paciente.form', compact('dados', 'dados2'));
     }
 
     public function index()
@@ -17,6 +21,7 @@ class PacienteController extends Controller
         $dados = Paciente::all();
 
         return view('paciente.index', compact('dados'));
+
     }
 
     public function salvar(PacienteRequest $dados)
@@ -25,10 +30,11 @@ class PacienteController extends Controller
             Paciente::find($dados['id_paciente'])->update($dados->all());
             return redirect(route('paciente.index'));
         } else {
-            Paciente::create($dados->all());
+            Paci:ente:create($dados->all());
             return redirect(route('paciente.index'));
         }
     }
+
 
     public function alterar($id)
     {

@@ -16,7 +16,8 @@ class SupervisorController extends Controller
 
     public function form()
     {
-           return view('supervisor.form');
+        $dados = Supervisor::all();
+           return view('supervisor.form', compact('dados'));
         }
         public function alterar($id)
 {

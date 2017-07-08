@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class composicaoFamiliar extends Model
+class familiar extends Model
 {
     protected $table = 'tb_composicao_familiar';
     public $timestamps = true;

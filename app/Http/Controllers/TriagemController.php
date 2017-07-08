@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Triagem;
 use App\Http\Requests\TriagemRequest;
+use App\Supervisor;
+use App\Aluno;
+use App\Paciente;
 
 class TriagemController extends Controller
 {
     public function form()
     {
-        return view('triagem.form');
-    }
+        $dados = Supervisor:: all();
+        $dados2 = Aluno:: all();
+        $dados3 = Paciente::all();
+        return view('triagem.form', compact('dados', 'dados2', 'dados3'));
+         }
     public function index()
     {
         $dados = Triagem::all();

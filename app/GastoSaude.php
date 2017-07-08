@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class triagemGastoSaude extends Model
+class gastoSaude extends Model
 {
 
     protected $table = 'tb_triagem_gasto_saude';

@@ -4,13 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class triagemComposicao extends Model
+class doencaCronica extends Model
 {
-
-    protected $table = 'tb_triagem_composicao';
+    protected $table = 'tb_triagem_doenca_cronica';
     public $timestamps = true;
     protected $primaryKey = 'fk_triagem';
-    protected $fillable = ['fk_triagem', 'fk_composicao_familiar'];
+    protected $fillable = ['fk_triagem', 'fk_doenca'];
 
     public function salvar($dados)
     {

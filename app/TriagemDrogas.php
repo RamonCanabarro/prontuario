@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class programaSocial extends Model
+class TriagemDrogas extends Model
 {
 
-    protected $table = 'tb_triagem_origem_renda';
+    protected $table = 'tb_triagem_supervisor';
     public $timestamps = true;
     protected $primaryKey = 'fk_triagem';
-    protected $fillable = ['fk_triagem', 'fk_doenca'];
+    protected $fillable = ['fk_triagem', 'fk_drogas'];
 
     public function salvar($dados)
     {
@@ -19,5 +19,6 @@ class programaSocial extends Model
             return $this::where('fk_triagem', $dados['fk_triagem'])->update($dados);
         }
         return $this::create($dados);
+
     }
 }
