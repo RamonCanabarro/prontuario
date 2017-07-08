@@ -132,6 +132,15 @@
 								<label for="nu_fone2">Celular</label>
 							</div>
 						</div>
+						<div class="input-field col s3">
+							<select name="fk_supervisor">
+								@foreach($supervisores as $supervisor)
+									{{--<option value="" disabled selected>Selecione supervisor</option>--}}
+									<option value="{{$supervisor['id_supervisor']}}" >{{$supervisor['tx_nome']}}</option>
+								@endforeach
+							</select>
+							<label for="supervisor">Supervisor:</label>
+						</div>
 						<input type="submit" value="Salvar" id="salvar" name="salvar" class="btn btn-success">
 						<a href="{{route('aluno.index')}}" class="btn red">Cancelar</a>
 					</form>
@@ -139,4 +148,10 @@
 			</div>
 		</div>
 	</div>
+	<script>
+	$(document).ready(function () {
+	$('select').material_select();
+	});
+
+	</script>
 @endsection

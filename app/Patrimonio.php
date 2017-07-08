@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class patrimonio extends Model
+class Patrimonio extends Model
 {
     protected $table = 'tb_patrimonio';
     public $timestamps = true;

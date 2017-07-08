@@ -26,8 +26,7 @@
 									<a class="waves-effect waves-light"
 									   href="supervisor/alterar/{{$dado['id_supervisor']}}"><i
 												class="material-icons left">mode_edit</i></a>
-									<a href="#!"
-									   onclick="EventAlert('teste','{{$dado['id_supervisor']}}')"><i
+									<a href="supervisor/deletar/{{$dado['id_supervisor']}}"><i
 												class="material-icons left red-text">delete</i></a>
 								</td>
 								{{--supervisor/deletar/{{$dado['id_supervisor']}}--}}
@@ -47,7 +46,7 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-        function EventAlert(mensagem, id) {
+//        function EventAlert(mensagem, id) {
 			/*swal({
 			 title: mensagem,
 			 text: "Não podera recuperar o registro numero" + id,
@@ -63,7 +62,7 @@
 			 }, function () {
 			 swal("Cancelled", "Cancelado :)", "error" + id);
 
-			 });*/
+			 });
 
             swal({
                     title: mensagem,
@@ -87,6 +86,6 @@
 
                     }
                 });
-        }
+        }*/
 	</script>
 @endsection

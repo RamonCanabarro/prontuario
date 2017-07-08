@@ -141,7 +141,7 @@
                         <div class="input-field col s3">
                             <input type="date" id="dt_nascimento" name="dt_nascimento"
                                    value="{{$dados['dt_nascimento'] or null}}" required class="validate"/>
-                            <label for="nascimento">Nascimento:</label>
+                            <label for="dt_nascimento">Nascimento:</label>
                         </div>
 
                         <div class="input-field col s3">
@@ -250,20 +250,20 @@
                         <div class="input-field col s3">
 
                             <select name="fk_aluno">
-                                @foreach($dados2 as $dado)
+                                @foreach($alunos as $aluno)
                                 {{--<option value="" disabled selected>Selecione supervisor</option>--}}
-                                <option value="{{$dado['id_aluno']}}" >{{$dado['tx_nome']}}</option>
+                                <option value="{{$aluno['id_aluno']}}" >{{$aluno['tx_nome']}}</option>
                             @endforeach
                             </select>
                             <label for="aluno">Aluno:</label>
                         </div>
                         <div class="input-field col s3">
-                                <select name="fk_supervisor">
-                                    @foreach($dados as $dado)
+                            <select name="fk_supervisor">
+                                @foreach($supervisores as $supervisor)
                                     {{--<option value="" disabled selected>Selecione supervisor</option>--}}
-                                    <option value="{{$dado['id_supervisor']}}" >{{$dado['tx_nome']}}</option>
-                                    @endforeach
-                                </select>
+                                    <option value="{{$supervisor['id_supervisor']}}" >{{$supervisor['tx_nome']}}</option>
+                                @endforeach
+                            </select>
                             <label for="supervisor">Supervisor:</label>
                         </div>
                         <input type="submit" value="Salvar" id="salvar" align="center" name="salvar" onclick=""

@@ -68,6 +68,11 @@
             });
         });
     </script>
+    <style>
+        p.uppercase{
+            text-transform:uppercase;
+        }
+    </style>
     <div class="row">
         <div class="col s10 offset-s1">
             <div class="card">
@@ -81,43 +86,48 @@
                             <div id="oculto">
                                 <input type="number" name="id_supervisor" id="id_supervisor" value="{{$dados['id_supervisor'] or null}}" hidden>
                             </div>
-                            <div class="input-field col s12">
-                                <input id="tx_nome" name="tx_nome" type="text" class="validate" required
+                            <div class="input-field col s8">
+                                <input id="tx_nome" name="tx_nome" type="text" class="validate"   required
                                        value="{{$dados['tx_nome'] or null}}">
                                 <label for="tx_nome">Nome</label>
                             </div>
                             <div class="input-field col s2">
-                                <input type="text" id="nu_codigo" name="nu_codigo" validate required
-                                       value="{{$dados['nu_codigo'] or null}}" maxlength="4">
-                                <label for="nu_codigo">Codigo</label>
+                                <input type="text" id="nu_crp" name="nu_crp" class="validate"   required
+                                       value="{{$dados['nu_crp'] or null}}" maxlength="4">
+                                <label for="nu_crp">CRP:</label>
                             </div>
                             <div class="input-field col s2">
-                                <input type="text" maxlength="9" id="nu_cep" name="nu_cep" class="validate" required
+                                <input type="text" id="nu_matricula" name="nu_matricula" class="validate"   required
+                                       value="{{$dados['nu_matricula'] or null}}" >
+                                <label for="nu_crp">Matrícula:</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input type="text" maxlength="9" id="nu_cep" name="nu_cep" class="validate"   required
                                        value="{{$dados['nu_cep'] or null}}">
                                 <label for="nu_cep">CEP</label>
                             </div>
-                            <div class="input-field col s6">
-                                <input type="text" id="tx_endereco" name="tx_endereco" class="validate" required
+                            <div class="input-field col s5">
+                                <input type="text" id="tx_endereco" name="tx_endereco" class="validate"   required
                                        value="{{$dados['tx_endereco'] or null}}">
                                 <label for="tx_endereco">Endereço</label>
                             </div>
                             <div class="input-field col s2">
-                                <input type="text" id="nu_numero" name="nu_numero" class="validate" required
+                                <input type="text" id="nu_numero" name="nu_numero" class="validate"   required
                                        value="{{$dados['nu_numero'] or null}}">
                                 <label for="tx_endereco">Nº</label>
                             </div>
                             <div class="input-field col s3">
-                                <input type="text" id="tx_bairro" name="tx_bairro" class="validate" required
+                                <input type="text" id="tx_bairro" name="tx_bairro" class="validate"   required
                                        value="{{$dados['tx_bairro'] or null}}">
                                 <label for="tx_bairro">Bairro</label>
                             </div>
                             <div class="input-field col s3">
-                                <input type="text" id="tx_cidade" name="tx_cidade" class="validate" required
+                                <input type="text" id="tx_cidade" name="tx_cidade" class="validate"   required
                                        value="{{$dados['tx_cidade'] or null}}">
                                 <label for="tx_cidade">Cidade</label>
                             </div>
                             <div class="input-field col s1">
-                                <input type="text" id="tx_uf" maxlength="2" name="tx_uf" class="validate" required
+                                <input type="text" id="tx_uf" maxlength="2" name="tx_uf" class="validate"   required
                                        value="{{$dados['tx_uf'] or null}}">
                                 <label for="tx_uf">UF</label>
                             </div>
@@ -130,6 +140,11 @@
                                 <input type="text" id="nu_fone2" name="nu_fone2" class="validate"
                                        value="{{$dados['nu_fone2'] or null}}">
                                 <label for="nu_fone2">Celular</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input type="email" id="tx_email" name="tx_email" class="validate"
+                                       value="{{$dados['tx_email'] or null}}">
+                                <label for="tx_email">E-mail</label>
                             </div>
                         </div>
 

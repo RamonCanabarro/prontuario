@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Aluno;
+use App\Supervisor;
 use App\Http\Requests\AlunoRequest;
 
 class AlunoController extends Controller
@@ -16,7 +17,9 @@ class AlunoController extends Controller
 
     public function incluir()
     {
-        return view('aluno.form');
+        //Recebe dados do supervisor
+        $supervisores = Supervisor:: all();
+        return view('aluno.form', compact('supervisores'));
 
     }
     public function alterar($id)
