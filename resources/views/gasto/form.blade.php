@@ -24,9 +24,9 @@
                                        value="{{$dados['id_gasto_saude'] or null}}" hidden>
                             </div>
                             <div class="input-field col s12">
-                                <input id="tx_nome" name="tx_nome" type="text" class="validate" required
-                                       value="{{$dados['tx_nome'] or null}}">
-                                <label for="tx_nome">Gasto</label>
+                                <input id="tx_drogas" name="tx_drogas" type="text" class="validate" required
+                                       value="{{$dados['tx_drogas'] or null}}">
+                                <label for="tx_drogas">Gasto</label>
                             </div>
 
                             <input type="submit" value="Salvar" id="salvar" name="salvar" onclick="EventAlert()"

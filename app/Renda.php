@@ -10,7 +10,7 @@ class renda extends Model
     protected $table = 'tb_origem_renda';
     public $timestamps = true;
     protected $primaryKey = 'id_origem_renda';
-    protected $fillable = ['id_origem_renda', 'tx_origem'];
+    protected $fillable = ['id_origem_renda', 'tx_origem', 'updated_at', 'created_at'];
 
     public function salvar($dados)
     {

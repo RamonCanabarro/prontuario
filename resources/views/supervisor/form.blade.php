@@ -69,8 +69,8 @@
         });
     </script>
     <style>
-        p.uppercase{
-            text-transform:uppercase;
+        p.uppercase {
+            text-transform: uppercase;
         }
     </style>
     <div class="row">
@@ -84,50 +84,51 @@
                         {{ csrf_field() }}
                         <div class="row">
                             <div id="oculto">
-                                <input type="number" name="id_supervisor" id="id_supervisor" value="{{$dados['id_supervisor'] or null}}" hidden>
+                                <input type="number" name="id_supervisor" id="id_supervisor"
+                                       value="{{$dados['id_supervisor'] or null}}" hidden>
                             </div>
                             <div class="input-field col s8">
-                                <input id="tx_nome" name="tx_nome" type="text" class="validate"   required
+                                <input id="tx_nome" name="tx_nome" type="text" class="validate" required
                                        value="{{$dados['tx_nome'] or null}}">
                                 <label for="tx_nome">Nome</label>
                             </div>
                             <div class="input-field col s2">
-                                <input type="text" id="nu_crp" name="nu_crp" class="validate"   required
+                                <input type="text" id="nu_crp" name="nu_crp" class="validate" required
                                        value="{{$dados['nu_crp'] or null}}" maxlength="4">
                                 <label for="nu_crp">CRP:</label>
                             </div>
                             <div class="input-field col s2">
-                                <input type="text" id="nu_matricula" name="nu_matricula" class="validate"   required
-                                       value="{{$dados['nu_matricula'] or null}}" >
+                                <input type="text" id="nu_matricula" name="nu_matricula" class="validate" required
+                                       value="{{$dados['nu_matricula'] or null}}">
                                 <label for="nu_crp">Matrícula:</label>
                             </div>
                             <div class="input-field col s2">
-                                <input type="text" maxlength="9" id="nu_cep" name="nu_cep" class="validate"   required
+                                <input type="text" maxlength="9" id="nu_cep" name="nu_cep" class="validate" required
                                        value="{{$dados['nu_cep'] or null}}">
                                 <label for="nu_cep">CEP</label>
                             </div>
                             <div class="input-field col s5">
-                                <input type="text" id="tx_endereco" name="tx_endereco" class="validate"   required
+                                <input type="text" id="tx_endereco" name="tx_endereco" class="validate" required
                                        value="{{$dados['tx_endereco'] or null}}">
                                 <label for="tx_endereco">Endereço</label>
                             </div>
                             <div class="input-field col s2">
-                                <input type="text" id="nu_numero" name="nu_numero" class="validate"   required
+                                <input type="text" id="nu_numero" name="nu_numero" class="validate" required
                                        value="{{$dados['nu_numero'] or null}}">
                                 <label for="tx_endereco">Nº</label>
                             </div>
                             <div class="input-field col s3">
-                                <input type="text" id="tx_bairro" name="tx_bairro" class="validate"   required
+                                <input type="text" id="tx_bairro" name="tx_bairro" class="validate" required
                                        value="{{$dados['tx_bairro'] or null}}">
                                 <label for="tx_bairro">Bairro</label>
                             </div>
                             <div class="input-field col s3">
-                                <input type="text" id="tx_cidade" name="tx_cidade" class="validate"   required
+                                <input type="text" id="tx_cidade" name="tx_cidade" class="validate" required
                                        value="{{$dados['tx_cidade'] or null}}">
                                 <label for="tx_cidade">Cidade</label>
                             </div>
                             <div class="input-field col s1">
-                                <input type="text" id="tx_uf" maxlength="2" name="tx_uf" class="validate"   required
+                                <input type="text" id="tx_uf" maxlength="2" name="tx_uf" class="validate" required
                                        value="{{$dados['tx_uf'] or null}}">
                                 <label for="tx_uf">UF</label>
                             </div>
@@ -148,7 +149,7 @@
                             </div>
                         </div>
 
-                            <input type="submit" value="Salvar" id="salvar" name="salvar" onclick="EventAlert()" class="btn btn-success">
+                        <input type="submit" value="Salvar" id="salvar" name="salvar" class="btn btn-success">
                         <a href="{{route('supervisor.index')}}" class="btn red">Cancelar</a>
                     </form>
                 </div>
@@ -156,5 +157,11 @@
         </div>
     </div>
 
-
+    <script>
+        $(document).ready(function () {
+            $("#salvar").click(function () {
+                swal("Hello world!");
+            });
+        });
+    </script>
 @endsection

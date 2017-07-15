@@ -15,7 +15,7 @@ class Triagem extends Model
         'nu_qtd_pessoa', 'nu_qtd_trabalha', 'tp_deficiencia',
         'tx_deficiencia', 'tp_acompanhamento_psic',
         'tp_acompanhamento', 'tx_local_acompanhamento',
-        'tp_drogas', 'tx_relatorio_acolhimento', 'fk_paciente', 'fk_aluno', 'fk_supervisor'];
+        'tp_drogas', 'tx_relatorio_acolhimento', 'fk_paciente'];
 
 
     public function salvar($dados)

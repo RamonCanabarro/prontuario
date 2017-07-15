@@ -19,6 +19,7 @@ Route::group(['prefix' => 'aluno'], function () {
     Route::get('/incluir', ['uses' => 'AlunoController@incluir', 'as' => 'aluno.incluir']);
     Route::get('/alterar/{id}', ['uses' => 'AlunoController@alterar', 'as' => 'aluno.alterar']);
     Route::post('/salvar', ['uses' => 'AlunoController@salvar', 'as' => 'aluno.salvar']);
+    Route::post('/list/{id}', ['uses' => 'AlunoController@list', 'as' => 'aluno.list']);
     Route::get('/deletar/{id}', ['uses' => 'AlunoController@deletar', 'as' => 'aluno.deletar']);
 });
 
@@ -43,26 +44,26 @@ Route::group(['prefix' => 'paciente'], function () {
     Route::get('/alterar/{id}',['uses' => 'SupervisorController@alterar', 'as' => 'supervisor.alterar']);
     Route::get('/deletar/{id}', ['uses' => 'SupervisorController@deletar', 'as' => 'supervisor.deletar']);
 });
-Route::group(['prefix' => 'composicao'], function () {
-    Route::get('/', ['uses' => 'ComposicaoController@index', 'as' => 'composicao.index']);
-    Route::get('/form', ['uses' => 'ComposicaoController@form', 'as' => 'composicao.form']);
-    Route::post('/salvar', ['uses' => 'ComposicaoController@salvar', 'as' => 'composicao.salvar']);
-    Route::get('/alterar/{id}',['uses' => 'ComposicaoController@alterar', 'as' => 'composicao.alterar']);
-    Route::get('/deletar/{id}', ['uses' => 'ComposicaoController@deletar', 'as' => 'composicao.deletar']);
+Route::group(['prefix' => 'composicaoFamiliar'], function () {
+    Route::get('/', ['uses' => 'ComposicaoFamiliarController@index', 'as' => 'composicaoFamiliar.index']);
+    Route::get('/form', ['uses' => 'ComposicaoFamiliarController@form', 'as' => 'composicaoFamiliar.form']);
+    Route::post('/salvar', ['uses' => 'ComposicaoFamiliarController@salvar', 'as' => 'composicaoFamiliar.salvar']);
+    Route::get('/alterar/{id}',['uses' => 'ComposicaoFamiliarController@alterar', 'as' => 'composicaoFamiliar.alterar']);
+    Route::get('/deletar/{id}', ['uses' => 'ComposicaoFamiliarController@deletar', 'as' => 'composicaoFamiliar.deletar']);
 });
-    Route::group(['prefix' => 'Doenca'], function () {
-    Route::get('/', ['uses' => 'DoencaController@index', 'as' => 'Doenca.index']);
-    Route::get('/form', ['uses' => 'DoencaController@form', 'as' => 'Doenca.form']);
-    Route::post('/salvar', ['uses' => 'DoencaController@salvar', 'as' => 'Doenca.salvar']);
-    Route::get('/alterar/{id}',['uses' => 'DoencaController@alterar', 'as' => 'Doenca.alterar']);
-    Route::get('/deletar/{id}', ['uses' => 'DoencaController@deletar', 'as' => 'Doenca.deletar']);
+    Route::group(['prefix' => 'doencaCronica'], function () {
+    Route::get('/', ['uses' => 'DoencaController@index', 'as' => 'doencaCronica.index']);
+    Route::get('/form', ['uses' => 'DoencaController@form', 'as' => 'doencaCronica.form']);
+    Route::post('/salvar', ['uses' => 'DoencaController@salvar', 'as' => 'doencaCronica.salvar']);
+    Route::get('/alterar/{id}',['uses' => 'DoencaController@alterar', 'as' => 'doencaCronica.alterar']);
+    Route::get('/deletar/{id}', ['uses' => 'DoencaController@deletar', 'as' => 'doencaCronica.deletar']);
 });
-    Route::group(['prefix' => 'DoencaCronica'], function () {
-    Route::get('/', ['uses' => 'DoencaCronicaController@index', 'as' => 'DoencaCronica.index']);
-    Route::get('/form', ['uses' => 'DoencaCronicaController@form', 'as' => 'DoencaCronica.form']);
-    Route::post('/salvar', ['uses' => 'DoencaCronicaController@salvar', 'as' => 'DoencaCronica.salvar']);
-    Route::get('/alterar/{id}',['uses' => 'DoencaCronicaController@alterar', 'as' => 'DoencaCronica.alterar']);
-    Route::get('/deletar/{id}', ['uses' => 'DoencaCronicaController@deletar', 'as' => 'DoencaCronica.deletar']);
+    Route::group(['prefix' => 'doencaCronica'], function () {
+    Route::get('/', ['uses' => 'DoencaCronicaController@index', 'as' => 'doencaCronica.index']);
+    Route::get('/form', ['uses' => 'DoencaCronicaController@form', 'as' => 'doencaCronica.form']);
+    Route::post('/salvar', ['uses' => 'DoencaCronicaController@salvar', 'as' => 'doencaCronica.salvar']);
+    Route::get('/alterar/{id}',['uses' => 'DoencaCronicaController@alterar', 'as' => 'doencaCronica.alterar']);
+    Route::get('/deletar/{id}', ['uses' => 'DoencaCronicaController@deletar', 'as' => 'doencaCronica.deletar']);
 });
 Route::group(['prefix' => 'drogas'], function () {
     Route::get('/', ['uses' => 'DrogasController@index', 'as' => 'drogas.index']);
@@ -108,11 +109,39 @@ Route::group(['prefix' => 'patrimonio'], function () {
     Route::get('/alterar/{id}',['uses' => 'PatrimonioController@alterar', 'as' => 'patrimonio.alterar']);
     Route::get('/deletar/{id}', ['uses' => 'PatrimonioController@deletar', 'as' => 'patrimonio.deletar']);
 });
-Route::group(['prefix' => 'triagempatrimonio'], function () {
+    Route::group(['prefix' => 'triagempatrimonio'], function () {
     Route::get('/', ['uses' => 'TriagemPatrimonioController@index', 'as' => 'triagempatrimonio.index']);
     Route::get('/form', ['uses' => 'TriagemPatrimonioController@form', 'as' => 'triagempatrimonio.form']);
     Route::post('/salvar', ['uses' => 'TriagemPatrimonioController@salvar', 'as' => 'triagempatrimonio.salvar']);
     Route::get('/alterar/{id}',['uses' => 'TriagemPatrimonioController@alterar', 'as' => 'triagempatrimonio.alterar']);
     Route::get('/deletar/{id}', ['uses' => 'TriagemPatrimonioController@deletar', 'as' => 'triagempatrimonio.deletar']);
+});
+    Route::group(['prefix' => 'renda'], function () {
+    Route::get('/', ['uses' => 'RendaController@index', 'as' => 'renda.index']);
+    Route::get('/form', ['uses' => 'RendaController@form', 'as' => 'renda.form']);
+    Route::post('/salvar', ['uses' => 'RendaController@salvar', 'as' => 'renda.salvar']);
+    Route::get('/alterar/{id}',['uses' => 'RendaController@alterar', 'as' => 'renda.alterar']);
+    Route::get('/deletar/{id}', ['uses' => 'RendaController@deletar', 'as' => 'renda.deletar']);
+});
+Route::group(['prefix' => 'triagemRenda'], function () {
+    Route::get('/', ['uses' => 'TriagemRendaController@index', 'as' => 'triagemRenda.index']);
+    Route::get('/form', ['uses' => 'TriagemRendaController@form', 'as' => 'triagemRenda.form']);
+    Route::post('/salvar', ['uses' => 'TriagemRendaController@salvar', 'as' => 'triagemRenda.salvar']);
+    Route::get('/alterar/{id}',['uses' => 'TriagemRendaController@alterar', 'as' => 'triagemRenda.alterar']);
+    Route::get('/deletar/{id}', ['uses' => 'TriagemRendaController@deletar', 'as' => 'triagemRenda.deletar']);
+});
+    Route::group(['prefix' => 'programaSocial'], function () {
+    Route::get('/', ['uses' => 'ProgramaSocialController@index', 'as' => 'programaSocial.index']);
+    Route::get('/form', ['uses' => 'ProgramaSocialController@form', 'as' => 'programaSocial.form']);
+    Route::post('/salvar', ['uses' => 'ProgramaSocialController@salvar', 'as' => 'programaSocial.salvar']);
+    Route::get('/alterar/{id}',['uses' => 'ProgramaSocialController@alterar', 'as' => 'programaSocial.alterar']);
+    Route::get('/deletar/{id}', ['uses' => 'ProgramaSocialController@deletar', 'as' => 'programaSocial.deletar']);
+});
+Route::group(['prefix' => 'triagemPrograma'], function () {
+    Route::get('/', ['uses' => 'TriagemProgramaController@index', 'as' => 'triagemPrograma.index']);
+    Route::get('/form', ['uses' => 'TriagemProgramaController@form', 'as' => 'triagemPrograma.form']);
+    Route::post('/salvar', ['uses' => 'TriagemProgramaController@salvar', 'as' => 'triagemPrograma.salvar']);
+    Route::get('/alterar/{id}',['uses' => 'TriagemProgramaController@alterar', 'as' => 'triagemPrograma.alterar']);
+    Route::get('/deletar/{id}', ['uses' => 'TriagemProgramaController@deletar', 'as' => 'triagemPrograma.deletar']);
 });
 
