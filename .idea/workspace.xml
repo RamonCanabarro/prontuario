@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc80a37b-704b-4c09-b8c5-83918f998371" name="Default" comment="">
+    <list default="true" id="fc80a37b-704b-4c09-b8c5-83918f998371" name="Default" comment="Sweet Alert(Commit sem os arquivos).">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/aluno/lista.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/triagemRenda/form.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/triagemRenda/index.blade.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Http/Controllers/DadosController.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Http/Requests/composicaoFamiliar.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/TriagemProgramaSocialController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TriagemProgramaController.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/resources/views/Doenca/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/doenca/form.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+<<<<<<< HEAD
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AlunoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlunoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ComposicaoController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ComposicaoController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/DoencaController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/DoencaController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/SupervisorController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/SupervisorController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Paciente.php" afterPath="$PROJECT_DIR$/app/Paciente.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Renda.php" afterPath="$PROJECT_DIR$/app/Renda.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Triagem.php" afterPath="$PROJECT_DIR$/app/Triagem.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/aluno/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/aluno/form.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/aluno/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/aluno/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/gasto/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/gasto/form.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/gasto/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/gasto/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/paciente/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/paciente/form.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/supervisor/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/supervisor/form.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/supervisor/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/supervisor/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/templates/principal.blade.php" afterPath="$PROJECT_DIR$/resources/views/templates/principal.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/triagem/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/triagem/form.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/triagemDrogas/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/triagemDrogas/index.blade.php" />
+>>>>>>> origin/master
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,8 +57,13 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="255">
               <caret line="125" column="4" lean-forward="false" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
+=======
+            <state relative-caret-position="17">
+              <caret line="111" column="41" lean-forward="false" selection-start-line="111" selection-start-column="31" selection-end-line="111" selection-end-column="41" />
+>>>>>>> origin/master
               <folding />
             </state>
           </provider>
@@ -140,6 +172,7 @@
         <option value="$PROJECT_DIR$/resources/views/DoencaCronica/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/doenca/form.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/doencaCronica/index.blade.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/resources/views/doencaCronica/form.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/drogas/form.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/drogas/index.blade.php" />
@@ -150,7 +183,19 @@
         <option value="$PROJECT_DIR$/resources/views/renda/form.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/renda/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/triagemDrogas/index.blade.php" />
+=======
+>>>>>>> origin/master
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/doencaCronica/form.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/drogas/form.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/drogas/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/gasto/form.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/gasto/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/gastoSaude/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/patrimonio/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/renda/form.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/renda/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/triagemDrogas/index.blade.php" />
       </list>
     </option>
   </component>
@@ -183,6 +228,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> origin/master
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -227,6 +276,7 @@
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
@@ -263,6 +313,8 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+=======
+>>>>>>> origin/master
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -279,6 +331,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prontuario" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prontuario" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prontuario" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="prontuario" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -484,7 +576,10 @@
       <workItem from="1500048380612" duration="913000" />
       <workItem from="1500050548536" duration="7091000" />
       <workItem from="1500059610527" duration="30000" />
+<<<<<<< HEAD
       <workItem from="1500158997401" duration="329000" />
+=======
+>>>>>>> origin/master
     </task>
     <task id="LOCAL-00001" summary="Páginas feitas. em o banco">
       <created>1497694709030</created>
@@ -591,6 +686,7 @@
       <option name="project" value="LOCAL" />
       <updated>1499481564157</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00016" summary="Sweet Alert(Commit sem os arquivos).">
       <created>1500159059777</created>
       <option name="number" value="00016" />
@@ -603,6 +699,13 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="454508000" />
+=======
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="454179000" />
+>>>>>>> origin/master
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -615,19 +718,31 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="600" y="0" width="773" height="772" extended-state="0" />
+<<<<<<< HEAD
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3015428" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29312763" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> origin/master
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2493113" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+=======
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2493113" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33489096" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+>>>>>>> origin/master
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -676,11 +791,19 @@
     <MESSAGE value="erro triagem, alterar paciente sem sucesso" />
     <MESSAGE value="Triagem, botoes" />
     <MESSAGE value="comitando para da pull" />
+<<<<<<< HEAD
     <MESSAGE value="Arquivos model/request" />
     <MESSAGE value="Arquivos de triagem, e jk paciente." />
     <MESSAGE value="Arquivos da tabela de triagem." />
     <MESSAGE value="Sweet Alert(Commit sem os arquivos)." />
     <option name="LAST_COMMIT_MESSAGE" value="Sweet Alert(Commit sem os arquivos)." />
+=======
+    <MESSAGE value="Sweet Alert(Commit sem os arquivos)." />
+    <MESSAGE value="Arquivos model/request" />
+    <MESSAGE value="Arquivos de triagem, e jk paciente." />
+    <MESSAGE value="Arquivos da tabela de triagem." />
+    <option name="LAST_COMMIT_MESSAGE" value="Arquivos da tabela de triagem." />
+>>>>>>> origin/master
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -798,6 +921,60 @@
         <state relative-caret-position="17">
           <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
           <folding />
+<<<<<<< HEAD
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/supervisor/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="66" lean-forward="false" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SupervisorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/supervisor/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="90" column="94" lean-forward="false" selection-start-line="90" selection-start-column="94" selection-end-line="90" selection-end-column="94" />
+          <caret line="95" column="92" lean-forward="false" selection-start-line="95" selection-start-column="92" selection-end-line="95" selection-end-column="92" />
+          <caret line="100" column="104" lean-forward="false" selection-start-line="100" selection-start-column="104" selection-end-line="100" selection-end-column="104" />
+          <caret line="105" column="106" lean-forward="false" selection-start-line="105" selection-start-column="106" selection-end-line="105" selection-end-column="106" />
+          <caret line="110" column="102" lean-forward="false" selection-start-line="110" selection-start-column="102" selection-end-line="110" selection-end-column="102" />
+          <caret line="115" column="98" lean-forward="false" selection-start-line="115" selection-start-column="98" selection-end-line="115" selection-end-column="98" />
+          <caret line="120" column="98" lean-forward="false" selection-start-line="120" selection-start-column="98" selection-end-line="120" selection-end-column="98" />
+          <caret line="125" column="98" lean-forward="false" selection-start-line="125" selection-start-column="98" selection-end-line="125" selection-end-column="98" />
+          <caret line="130" column="104" lean-forward="false" selection-start-line="130" selection-start-column="104" selection-end-line="130" selection-end-column="104" />
+          <caret line="135" column="103" lean-forward="false" selection-start-line="135" selection-start-column="103" selection-end-line="135" selection-end-column="103" />
+          <caret line="140" column="96" lean-forward="false" selection-start-line="140" selection-start-column="96" selection-end-line="140" selection-end-column="96" />
+          <caret line="145" column="97" lean-forward="false" selection-start-line="145" selection-start-column="97" selection-end-line="145" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/atendimento/form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Composicao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/composicaoFamiliar.php" />
+    <entry file="file://$PROJECT_DIR$/app/Paciente.php">
+=======
         </state>
       </provider>
     </entry>
@@ -857,13 +1034,18 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/ComposicaoFamiliarRequest.php">
+>>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        <state relative-caret-position="442">
+          <caret line="26" column="5" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="26" selection-end-column="5" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/ComposicaoFamiliarRequest.php">
+=======
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ComposicaoController.php">
+>>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -871,14 +1053,37 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ComposicaoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PacienteController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PacienteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ComposicaoFamiliarController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+>>>>>>> origin/master
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ComposicaoFamiliarController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -910,6 +1115,31 @@
         </state>
       </provider>
     </entry>
+=======
+    <entry file="file://$PROJECT_DIR$/app/ComposicaoFamiliar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="72" lean-forward="false" selection-start-line="11" selection-start-column="72" selection-end-line="11" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Dados/form.blade.php" />
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DadosController.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/composicaoFamiliar/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="25" column="64" lean-forward="true" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/composicaoFamiliar/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="34" column="50" lean-forward="false" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> origin/master
     <entry file="file://$PROJECT_DIR$/resources/views/doenca/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -936,6 +1166,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="33" column="43" lean-forward="false" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+<<<<<<< HEAD
         </state>
       </provider>
     </entry>
@@ -953,6 +1184,25 @@
         </state>
       </provider>
     </entry>
+=======
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/drogas/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="34" column="46" lean-forward="false" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/drogas/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="49" lean-forward="false" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> origin/master
     <entry file="file://$PROJECT_DIR$/resources/views/familiar/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1065,8 +1315,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="255">
           <caret line="125" column="4" lean-forward="false" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
+=======
+        <state relative-caret-position="17">
+          <caret line="111" column="41" lean-forward="false" selection-start-line="111" selection-start-column="31" selection-end-line="111" selection-end-column="41" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
