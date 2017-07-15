@@ -123,7 +123,7 @@ Route::group(['prefix' => 'patrimonio'], function () {
     Route::get('/alterar/{id}',['uses' => 'RendaController@alterar', 'as' => 'renda.alterar']);
     Route::get('/deletar/{id}', ['uses' => 'RendaController@deletar', 'as' => 'renda.deletar']);
 });
-Route::group(['prefix' => 'triagemRenda'], function () {
+    Route::group(['prefix' => 'triagemRenda'], function () {
     Route::get('/', ['uses' => 'TriagemRendaController@index', 'as' => 'triagemRenda.index']);
     Route::get('/form', ['uses' => 'TriagemRendaController@form', 'as' => 'triagemRenda.form']);
     Route::post('/salvar', ['uses' => 'TriagemRendaController@salvar', 'as' => 'triagemRenda.salvar']);
