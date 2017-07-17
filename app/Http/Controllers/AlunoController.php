@@ -25,25 +25,21 @@ class AlunoController extends Controller
     public function alterar($id)
     {
         $dados = Aluno::where('id_aluno', $id)->get();
-        $supervisores = Supervisor:: all();
         $dados = $dados[0];
 //            print_r($dados);
 //            die;
-        return view('aluno.form', compact('dados', 'supervisores'));
+        return view('aluno.form', compact('dados'));
     }
 
     public function salvar(AlunoRequest $dados)
     {
         if ($dados['id_aluno']) {
             Aluno::find($dados['id_aluno'])->update($dados->all());
-            \Session::flash('mensagem', ['msg'=>'Aluno Salvo com sucesso!', 'class'=>'green white-text']);
             return redirect(route('aluno.index'));
         } else {
             Aluno::create($dados->all());
-            \Session::flash('mensagem', ['msg'=>'Aluno Salvo com sucesso!', 'class'=>'grenn']);
             return redirect(route('aluno.index'));
         }
-
     }
 
     public function deletar($dados)

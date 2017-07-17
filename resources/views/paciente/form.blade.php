@@ -257,6 +257,15 @@
                             </select>
                             <label for="aluno">Aluno:</label>
                         </div>
+                        <div class="input-field col s3">
+                            <select name="fk_supervisor">
+                                @foreach($supervisores as $supervisor)
+                                    {{--<option value="" disabled selected>Selecione supervisor</option>--}}
+                                    <option value="{{$supervisor['id_supervisor']}}" >{{$supervisor['tx_nome']}}</option>
+                                @endforeach
+                            </select>
+                            <label for="supervisor">Supervisor:</label>
+                        </div>
                         <input type="submit" value="Salvar" id="salvar" align="center" name="salvar" onclick=""
                                class="btn btn-success">
                         <a href="{{route('paciente.index')}}" class="btn red">Cancelar</a>

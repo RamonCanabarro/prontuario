@@ -14,9 +14,9 @@
             <div class="card">
                 <div class="card-content">
                     <div>
-                        <h4 class="grey-text" align="center">Doença</h4>
+                        <h4 class="grey-text" align="center">Cadastro de Supervisor</h4>
                     </div>
-                    <form method="post" action={{route('doenca.salvar')}}>
+                    <form method="post" action={{route('Doenca')}}>
                         {{ csrf_field() }}
                         <div class="row">
                             <div id="oculto">
@@ -31,7 +31,7 @@
 
                             <input type="submit" value="Salvar" id="salvar" name="salvar" onclick="EventAlert()"
                                    class="btn btn-success">
-                            <a href="{{route('doenca.index')}}" class="btn red">Cancelar</a>
+                            <a href="{{route('Doenca')}}" class="btn red">Cancelar</a>
                         </div></form>
                 </div>
             </div>

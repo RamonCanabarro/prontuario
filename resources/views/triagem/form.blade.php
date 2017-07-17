@@ -32,14 +32,14 @@
                             </p>
                         </div>
                         <div class="input-field col s3">
-                            <label for="tx_nome" class="">Nome do paciente</label>
-                            <input type="text" class="validate" value="{{$dados['tx_nome'] or null}}" name="tx_nome"
+                            <label for="tx_nome" class="active">Nome do paciente</label>
+                            <input type="text" class="form-control" value="{{$dados['tx_nome'] or null}}" name="tx_nome"
                                    id="tx_nome" required>
                         </div>
 
                         <div class="input-field col s3">
                             <label for="tx_nome_responsavel" class="active">Responsavel</label>
-                            <input type="text" class="validate" value="{{$dados['tx_nome_responsavel'] or null}}"
+                            <input type="text" class="form-control" value="{{$dados['tx_nome_responsavel'] or null}}"
                                    id="tx_nome_responsavel"
                                    name="tx_nome_responsavel">
                         </div>
@@ -47,20 +47,20 @@
                         <div class="input-field col s10">
                             <label for="activate"><b>Tipos de atendimento</b></label>
                             <p>
-                                <input type="radio" name="tp_grupo" value="{{$dados['tp_grupo'] or 'C'}}" id="Crianca"
+                                <input type="radio" name="tp_grupo" value="{{$dados['tp_grupo'] or null}}" id="Crianca"
                                        value="Crianca" class="with-gap">
                                 <label class="active" for="Crianca">Criança</label>
 
-                                <input type="radio" name="tp_grupo" value="{{$dados['tp_grupo'] or 'A'}}"
+                                <input type="radio" name="tp_grupo" value="{{$dados['tp_grupo'] or null}}"
                                        id="Adolescente"
                                        value="Adolescente" class="with-gap">
                                 <label class="active" for="Adolescente">Adolescente</label>
 
-                                <input type="radio" name="tp_grupo" value="{{$dados['tp_grupo'] or 'D'}}" id="Adulto"
+                                <input type="radio" name="tp_grupo" value="{{$dados['tp_grupo'] or null}}" id="Adulto"
                                        value="Adulto" class="with-gap">
                                 <label class="active" for="Adulto">Adulto</label>
 
-                                <input type="radio" name="tp_grupo" value="{{$dados['tp_grupo'] or 'I'}}" id="Idoso"
+                                <input type="radio" name="tp_grupo" value="{{$dados['tp_grupo'] or null}}" id="Idoso"
                                        value="Idoso" class="with-gap">
                                 <label class="active" for="Idoso">Idoso</label>
                             </p>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="input-field col s3">
                             <label for="motivo" class="control-label">Motivo</label>
-                            <input type="text" id="motivo" name="tx_motivo_recusa" class="validate">
+                            <input type="text" id="motivo" name="tx_motivo_recusa" class="form-control">
                         </div>
                         <div class="input-field col s3" align="left">
                             <label for="dtRecusa" class="active">Dt. recusa</label>
@@ -136,9 +136,9 @@
 
 
                         <div class="input-field col s3">
-                            <input type="radio" id="sim3" value="S" name="tp_acompanhamento_psic" class="with-gap"><label
+                            <input type="radio" id="sim3" name="tp_acompanhamento_psic" class="with-gap"><label
                                     for="sim3">Sim.</label>
-                            <input type="radio" id="nao3" value="N" name="tp_acompanhamento_psic" class="with-gap"><label
+                            <input type="radio" id="nao3" name="tp_acompanhamento_psic" class="with-gap"><label
                                     for="nao3">Não.</label>
                             <label for="tp_acompanhamento_psic" class="active">Você ou alguem da
                                 família faz acompanhamento psiquiátrico?</label>
@@ -154,21 +154,35 @@
                             <label class="active" for="fk_gastos_saude">Mensalidade do local.</label>
                         </div>
                         <div class="input-field col s3">
-                            <input type="radio" id="sim2" value="S" name="tp_drogas" class="with-gap"><label
-                                    for="sim2" >Sim.</label>
-                            <input type="radio" id="nao2" value="N" name="tp_drogas" class="with-gap"><label
-                                    for="nao2" >Não.</label>
-                            <label for="tp_drogas" class="active">Você é usuário de drogas?</label>
+                            <input type="radio" id="sim2" name="tp_drogas" class="with-gap"><label
+                                    for="sim2" value="s">Sim.</label>
+                            <input type="radio" id="nao2" name="tp_drogas" class="with-gap"><label
+                                    for="nao2" value="n">Não.</label>
+                            <label for="tp_acompanhamento_psic" class="active">Você é usuário de drogas?</label>
                         </div>
                         <div class="input-field col s3" align="left">
-                            <label for='tx_observacao' class="active">Observação:</label>
-                            <input type="text" class="validate" name="tx_observacao" id="tx_observacao"
+                            <label for='observacao' class="active">Observação:</label>
+                            <input type="text" class="validate" name="observacao" id="observacao"
                                    required>
                         </div>
-                        <div class="input-field col s3" align="left">
-                            <label for='tx_relatorio_acolhimento' class="active">Relatório:</label>
-                            <input type="text" class="validate" name="tx_relatorio_acolhimento" id="tx_relatorio_acolhimento"
-                                   required>
+
+                        <div class="imput field col s3">
+                            <select name="fk_aluno">
+                                @foreach($dados2 as $dado)
+                                    {{--<option value="" disabled selected>Selecione supervisor</option>--}}
+                                    <option value="{{$dado['id_aluno']}}">{{$dado['tx_nome']}}</option>
+                                @endforeach
+                            </select>
+                            <label for="aluno">Aluno:</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <select name="fk_supervisor">
+                                @foreach($dados as $dado)
+                                    {{--<option value="" disabled selected>Selecione supervisor</option>--}}
+                                    <option value="{{$dado['id_supervisor']}}">{{$dado['tx_nome']}}</option>
+                                @endforeach
+                            </select>
+                            <label for="supervisor">Supervisor:</label>
                         </div>
                         <div class="input-field col s3">
                             <select name="fk_paciente">

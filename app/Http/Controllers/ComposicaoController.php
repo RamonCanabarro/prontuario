@@ -11,12 +11,12 @@ class ComposicaoController extends Controller
     {
         $dados = Composicao::all();
 
-        return view('composicaoFamiliar.index', compact('dados'));
+        return view('composicao.index', compact('dados'));
     }
 
     public function form()
     {
-        return view('composicaoFamiliar.form');
+        return view('composicao.form');
 
     }
     public function alterar($id)
@@ -25,7 +25,7 @@ class ComposicaoController extends Controller
         $dados = $dados[0];
 //            print_r($dados);
 //            die;
-        return view('composicaoFamiliar.form', compact('dados'));
+        return view('composicao.form', compact('dados'));
     }
 
     public function salvar(ComposicaoRequest $dados)
@@ -44,4 +44,5 @@ class ComposicaoController extends Controller
         Composicao::where('fk_triagem', $dados)->delete();
         return redirect(route('Composicao.index'));
     }
+
 }

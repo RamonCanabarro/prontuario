@@ -15,7 +15,7 @@ class Paciente extends Model
         , 'tx_naturalidade', 'tx_uf_naturalidade', 'nu_fone', 'nu_fone1'
         , 'tx_estado_civil', 'tx_sexo', 'tx_raca', 'tp_atendimento'
         , 'tp_orientacao_sexual', 'tp_entrada_encam', 'tp_saida_encam'
-        , 'fk_aluno', 'created_at', 'updated_at'];
+        , 'fk_aluno', 'fk_supervisor', 'created_at', 'updated_at'];
 
     public function salvar($dados)
     {

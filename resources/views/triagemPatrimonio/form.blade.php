@@ -19,7 +19,7 @@
                     <form method="post" action={{route('triagemPatrimonio.salvar')}}>
                         {{ csrf_field() }}
                         <div class="row">
-                            <div class="input-field col s8">
+                            <div class="input-field col s6">
                                 <select name="fk_triagem">
                                     @foreach($dados as $dado)
                                         {{--<option value="" disabled selected>Selecione supervisor</option>--}}

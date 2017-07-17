@@ -27,19 +27,19 @@
                     <tr>
                         <td>
 
-                            <a class="waves-effect waves-light" href="gasto/alterar/{{$dado['id_doenca_cronica']}}"><i
+                            <a class="waves-effect waves-light" href="doenca/alterar/{{$dado['id_doenca_cronica']}}"><i
                                     class="material-icons left">mode_edit</i></a>
-                            <a href="gasto/deletar/{{$dado['id_doenca_cronica']}}"><i
+                            <a href="doenca/deletar/{{$dado['id_doenca_cronica']}}"><i
                                     class="material-icons left red-text" onclick="return confirm('Tem certeza que deseja deletar?')">delete</i></a>
                         </td>
-                        <td>{{$dado['tx_drogas']}}</td>
+                        <td>{{$dado['tx_nome']}}</td>
                     </tr>
                     @endforeach
                     </tbody>
                 </table>
             </div>
             <div class="right-align">
-                <a class="btn-floating btn-large waves-effect waves-light" href="{{route('gasto.form')}}"><i
+                <a class="btn-floating btn-large waves-effect waves-light" href="{{route('Doenca')}}"><i
                         class="material-icons">add</i></a>
             </div>
         </div>

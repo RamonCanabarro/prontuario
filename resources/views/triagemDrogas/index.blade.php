@@ -14,7 +14,7 @@
         <div class="card">
             <div class="card-content">
                 <div>
-                    <h4 class="grey-text" align="center">Triagem de drogas</h4>
+                    <h4 class="grey-text" align="center">Lista de drogas</h4>
                 </div>
                 <table class="striped bordered">
                     <thead>
